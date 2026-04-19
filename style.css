@@ -8,23 +8,23 @@
 
 :root {
   /* ── Backgrounds ── */
-  --bg-deep:    #080B0F;
-  --bg-base:    #0D1117;
-  --bg-surface: #121820;
-  --bg-raised:  #19222D;
+  --bg-deep:    #0A0A0A;
+  --bg-base:    #121212;
+  --bg-surface: #1A1A1A;
+  --bg-raised:  #242424;
 
   /* ── Brand Colors ── */
-  --gold:       #C9A84C;
-  --gold-light: #E8C97A;
-  --gold-dim:   #8B6914;
-  --gold-soft:  rgba(201,168,76,0.08);
-  --gold-glow:  rgba(201,168,76,0.15);
+  --gold:       #D4AF37;
+  --gold-light: #F3E5AB;
+  --gold-dim:   #998024;
+  --gold-soft:  rgba(212, 175, 55, 0.08);
+  --gold-glow:  rgba(212, 175, 55, 0.15);
 
   /* ── Text ── */
-  --text-primary:   #F2EDE4;
-  --text-secondary: #9AA3AE;
-  --text-muted:     #5A6472;
-  --text-gold:      #C9A84C;
+  --text-primary:   #F5F5F5;
+  --text-secondary: #A3A3A3;
+  --text-muted:     #737373;
+  --text-gold:      #D4AF37;
 
   /* ── Accents (supporting) ── */
   --blue-soft:  rgba(100,130,200,0.6);
@@ -33,12 +33,12 @@
   /* ── Glass / Border ── */
   --glass-bg:     rgba(255,255,255,0.03);
   --glass-border: rgba(255,255,255,0.07);
-  --glass-gold-b: rgba(201,168,76,0.14);
+  --glass-gold-b: rgba(212, 175, 55, 0.14);
 
   /* ── Typography ── */
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body:    'Inter', system-ui, sans-serif;
-  --font-mono:    'Space Mono', 'Courier New', monospace;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Courier New', monospace;
 
   /* ── Spacing ── */
   --radius:    14px;
