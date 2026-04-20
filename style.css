@@ -471,16 +471,18 @@ body {
   .vis-flex { flex-direction: column; gap: 24px; }
   .vis-container { width: 100%; max-width: 220px; height: 200px; margin: 0 auto; }
   
-  .ventures-widget { padding: 24px 16px 16px; }
+  .ventures-widget { padding: 16px; }
   .ventures-scroll { 
-    margin-left: -16px; 
-    margin-right: -16px; 
-    padding: 0 16px 16px; 
+    margin: 0; 
+    padding: 0; 
+    display: flex;
+    flex-direction: column;
     gap: 12px;
+    overflow-x: visible;
   }
   .venture-card { 
-    min-width: 80vw; 
-    scroll-snap-align: center; 
-    border-radius: 16px;
+    min-width: 0; 
+    width: 100%;
+    margin: 0;
   }
 }
