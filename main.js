@@ -58,14 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Animation progress
     let progress = 0;
-    const duration = 1500; // ms
+    const duration = 1800; // ms
     let startTime = null;
 
-    function drawPolygon(r, color, fill = false) {
+    function drawPolygon(r, color, fill = false, rot = 0) {
       ctx.beginPath();
       for (let i = 0; i < sides; i++) {
-        // -Math.PI/2 to start from top
-        const angle = i * angleStep - Math.PI / 2;
+        const angle = i * angleStep - Math.PI / 2 + rot;
         const x = center.x + r * Math.cos(angle);
         const y = center.y + r * Math.sin(angle);
         if (i === 0) ctx.moveTo(x, y);
@@ -86,10 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    function drawSpokes() {
+    function drawSpokes(rot = 0) {
       ctx.beginPath();
       for (let i = 0; i < sides; i++) {
-        const angle = i * angleStep - Math.PI / 2;
+        const angle = i * angleStep - Math.PI / 2 + rot;
         ctx.moveTo(center.x, center.y);
         ctx.lineTo(center.x + radius * Math.cos(angle), center.y + radius * Math.sin(angle));
       }
@@ -98,11 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.stroke();
     }
 
-    function drawData(p) {
+    function drawData(p, rot = 0) {
       ctx.beginPath();
       for (let i = 0; i < sides; i++) {
-        const angle = i * angleStep - Math.PI / 2;
-        // Apply animation progress 'p'
+        const angle = i * angleStep - Math.PI / 2 + rot;
         const r = radius * data[i].value * p;
         const x = center.x + r * Math.cos(angle);
         const y = center.y + r * Math.sin(angle);
@@ -126,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Draw points
       for (let i = 0; i < sides; i++) {
-        const angle = i * angleStep - Math.PI / 2;
+        const angle = i * angleStep - Math.PI / 2 + rot;
         const r = radius * data[i].value * p;
         const x = center.x + r * Math.cos(angle);
         const y = center.y + r * Math.sin(angle);
@@ -144,23 +142,29 @@ document.addEventListener('DOMContentLoaded', () => {
     function render(timestamp) {
       if (!startTime) startTime = timestamp;
       const elapsed = timestamp - startTime;
-      // Easing out quint
       const t = Math.min(elapsed / duration, 1);
-      progress = 1 - Math.pow(1 - t, 5);
+      // Smooth elastic easing out
+      progress = 1 - Math.pow(1 - t, 4);
+
+      // Continuous slow rotation
+      const rotationOffset = elapsed * 0.00015;
 
       ctx.clearRect(0, 0, cw, ch);
       
-      // Draw 3 background grid polygons
-      drawPolygon(radius, 'rgba(255, 255, 255, 0.1)');
-      drawPolygon(radius * 0.66, 'rgba(255, 255, 255, 0.05)');
-      drawPolygon(radius * 0.33, 'rgba(255, 255, 255, 0.05)');
+      // Background web
+      drawPolygon(radius, 'rgba(255, 255, 255, 0.1)', false, rotationOffset);
+      drawPolygon(radius * 0.66, 'rgba(255, 255, 255, 0.05)', false, rotationOffset);
+      drawPolygon(radius * 0.33, 'rgba(255, 255, 255, 0.05)', false, rotationOffset);
+      drawSpokes(rotationOffset);
       
-      drawSpokes();
-      drawData(progress);
+      // Data with glow
+      ctx.shadowBlur = 15;
+      ctx.shadowColor = 'rgba(212, 175, 55, 0.5)';
+      drawData(progress, rotationOffset);
+      ctx.shadowBlur = 0; // reset
 
-      if (t < 1) {
-        requestAnimationFrame(render);
-      }
+      // Infinite loop
+      requestAnimationFrame(render);
     }
 
     // Only start animation when in view
@@ -174,19 +178,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.5 });
     
     observer.observe(canvas);
-    // Bar animations
+    
+    // Bar animations (Stagger cascade)
     const barObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.transform = 'scaleX(1)';
+          const bars = entry.target.querySelectorAll('.bar-fill');
+          bars.forEach((bar, idx) => {
+            setTimeout(() => {
+              bar.style.transform = 'scaleX(1)';
+            }, idx * 250); // Stagger by 250ms
+          });
           barObserver.unobserve(entry.target);
         }
       });
     }, { threshold: 0.5 });
 
-    document.querySelectorAll('.bar-fill').forEach(bar => {
-      barObserver.observe(bar);
-    });
-
+    const visBars = document.querySelector('.vis-bars');
+    if (visBars) {
+      barObserver.observe(visBars);
+    }
   }
 });
