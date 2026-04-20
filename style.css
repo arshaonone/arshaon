@@ -18,10 +18,10 @@
   --blue: #3b82f6;
   --green: #10b981;
   
-  --font-sans: 'Outfit', -apple-system, sans-serif;
+  --font-sans: 'Inter', -apple-system, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   
-  --radius: 16px;
+  --radius: 20px;
   --radius-sm: 8px;
 }
 
@@ -31,12 +31,10 @@ body {
   background-color: var(--bg-app);
   color: var(--text-primary);
   font-family: var(--font-sans);
-  line-height: 1.5;
-  padding: 24px;
+  line-height: 1.6;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::-webkit-scrollbar { width: 0; height: 0; display: none; }
@@ -44,11 +42,12 @@ body {
 /* ── LAYOUT ── */
 .app-container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1040px;
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin: 0 auto;
+  padding: 32px 24px;
 }
 
 .bento-grid {
@@ -441,15 +440,15 @@ body {
 }
 
 @media (max-width: 650px) {
-  body { padding: 8px; background: #000; }
-  .app-container { gap: 8px; }
-  .bento-grid { gap: 8px; }
-  .widget { padding: 16px; border-radius: 20px; }
+  body { background: #000; overflow-x: hidden; }
+  .app-container { padding: 8px; gap: 10px; margin-bottom: 0; }
+  .bento-grid { gap: 10px; }
+  .widget { padding: 20px; border-radius: 28px; background: #0a0a0a; border: 1px solid rgba(255,255,255,0.06); }
   
-  .app-header { flex-direction: column; align-items: stretch; gap: 20px; padding: 20px; border-radius: 20px; }
+  .app-header { flex-direction: column; align-items: stretch; gap: 20px; padding: 24px 20px; border-radius: 28px; }
   .user-profile { flex-direction: column; align-items: center; text-align: center; }
   .user-info .location { justify-content: center; }
-  .header-actions { flex-direction: row; }
+  .header-actions { flex-direction: row; margin-top: 4px; }
   .btn-primary { flex: 1; }
   
   .bento-grid { grid-template-columns: 1fr; }
@@ -457,32 +456,33 @@ body {
   
   .stats-col { flex-direction: row; flex-wrap: wrap; }
   .stat-card {
-    min-width: calc(50% - 8px);
+    min-width: calc(50% - 5px);
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
-    padding: 16px;
+    padding: 20px;
   }
   
   .social-grid { grid-template-columns: 1fr; }
-  .footer-widget { padding: 16px; }
+  .footer-widget { padding: 32px 16px; border: none; background: transparent; }
 
   /* Glorious Mobile Adjustments */
-  .vis-flex { flex-direction: column; gap: 24px; }
-  .vis-container { width: 100%; max-width: 220px; height: 200px; margin: 0 auto; }
+  .vis-flex { flex-direction: column; gap: 28px; }
+  .vis-container { width: 100%; max-width: 240px; height: 210px; margin: 0 auto; }
   
-  .ventures-widget { padding: 16px; }
+  .ventures-widget { padding: 24px 20px; }
   .ventures-scroll { 
     margin: 0; 
     padding: 0; 
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     overflow-x: visible;
   }
   .venture-card { 
     min-width: 0; 
     width: 100%;
     margin: 0;
+    padding: 20px;
   }
 }
