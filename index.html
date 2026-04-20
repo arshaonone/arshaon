@@ -8,7 +8,8 @@
   <!-- Sleek SVG Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏢</text></svg>">
 
-  <!-- High-end App Fonts -->
+  <!-- Preconnect & Preload Critical Assets -->
+  <link rel="preload" href="profile.jpg" as="image" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -25,7 +26,7 @@
       <div class="user-profile">
         <div class="avatar-ring">
           <div class="avatar">
-            <img src="profile.jpg" alt="Ashikur Rahman Shaon" class="profile-photo">
+            <img src="profile.jpg" alt="Ashikur Rahman Shaon" class="profile-photo" fetchpriority="high">
           </div>
           <div class="status-dot"></div>
         </div>
@@ -259,7 +260,7 @@
 
     </div>
   </main>
-
-  <script src="main.js"></script>
+  
+  <script src="main.js" defer></script>
 </body>
 </html>
