@@ -234,6 +234,53 @@ body {
   font-weight: 600;
 }
 
+/* ── VISUALIZER BARS & RINGS ── */
+.vis-flex {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.vis-bars {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.bar-row { width: 100%; }
+.bar-label { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 6px; }
+.bar-label .val { font-family: var(--font-mono); color: var(--text-primary); }
+.bar-track { height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 3px; transform-origin: left; transform: scaleX(0); transition: transform 1.2s cubic-bezier(0.1, 0.9, 0.2, 1); }
+
+/* ── HOVER EFFECTS ── */
+.hover-float { transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s; }
+.hover-float:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+
+.gradient-hover { position: relative; z-index: 1; }
+.gradient-hover::before {
+  content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(212,175,55,0.1), transparent);
+  opacity: 0; transition: opacity 0.4s; z-index: -1; border-radius: inherit;
+}
+.gradient-hover:hover::before { opacity: 1; }
+
+.icon-glow { transition: text-shadow 0.3s, transform 0.3s; }
+.stat-card:hover .icon-glow { text-shadow: 0 0 15px rgba(255,255,255,0.3); transform: scale(1.1); }
+
+.zoom-card { transition: transform 0.3s, border-color 0.3s; }
+.zoom-card:hover { transform: scale(1.02); }
+.venture-card:hover .floating { animation: floatIcon 2s ease-in-out infinite; }
+@keyframes floatIcon { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+
+.pulse-btn { box-shadow: 0 0 0 0 rgba(255,255,255,0.3); animation: pulseBtn 2s infinite; }
+@keyframes pulseBtn { 70% { box-shadow: 0 0 0 10px rgba(255,255,255,0); } 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); } }
+
+.btn-fx { position: relative; overflow: hidden; }
+.btn-fx::after {
+  content: ''; position: absolute; top: 50%; left: 50%; width: 10px; height: 10px; background: rgba(255,255,255,0.2); 
+  opacity: 0; border-radius: 100%; transform: scale(1) translate(-50%, -50%); transform-origin: 50% 50%;
+}
+.btn-fx:active::after { opacity: 1; transform: scale(20) translate(-50%, -50%); transition: transform 0.4s, opacity 0.4s; }
+
 /* ── BIODATA ── */
 .data-rows { display: flex; flex-direction: column; gap: 12px; }
 .data-row {

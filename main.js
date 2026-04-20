@@ -174,5 +174,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.5 });
     
     observer.observe(canvas);
+    // Bar animations
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.transform = 'scaleX(1)';
+          barObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.bar-fill').forEach(bar => {
+      barObserver.observe(bar);
+    });
+
   }
 });
