@@ -3,698 +3,564 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Ashikur Rahman Shaon – Serial entrepreneur, digital creator, and company founder from Bangladesh. Building apps, brands, and systems that create lasting value."/>
-  <meta name="keywords" content="Ashikur Rahman Shaon, arshaon, entrepreneur, founder, Bangladesh, app development, web development"/>
+  <meta name="description" content="Ashikur Rahman Shaon — Serial entrepreneur, company founder, and digital creator from Bangladesh."/>
   <meta name="author" content="Ashikur Rahman Shaon"/>
-  <meta property="og:title" content="Ashikur Rahman Shaon | Entrepreneur & Digital Creator"/>
-  <meta property="og:description" content="Serial entrepreneur building companies, products, and digital systems from Bangladesh."/>
-  <meta property="og:type" content="website"/>
-  <title>Ashikur Rahman Shaon | Entrepreneur & Digital Creator</title>
+  <title>Ashikur Rahman Shaon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Space+Mono&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- PARTICLES -->
-  <canvas id="bg-canvas"></canvas>
+  <canvas id="orb-canvas"></canvas>
+  <div class="noise-overlay"></div>
 
-  <!-- ═══════════════════ HEADER ═══════════════════ -->
-  <header class="site-header" id="site-header">
-
-    <!-- TOP TICKER BAR -->
-    <div class="ticker-bar">
-      <div class="ticker-inner">
-        <div class="ticker-track" id="ticker-track">
-          <span class="tick-item"><span class="tick-dot"></span>Serial Entrepreneur</span>
-          <span class="tick-sep">·</span>
-          <span class="tick-item">4 Active Companies</span>
-          <span class="tick-sep">·</span>
-          <span class="tick-item">30+ Projects Delivered</span>
-          <span class="tick-sep">·</span>
-          <span class="tick-item">Bangladesh 🇧🇩</span>
-          <span class="tick-sep">·</span>
-          <span class="tick-item">Open to Partnerships</span>
-          <span class="tick-sep">·</span>
-          <span class="tick-item">App Development</span>
-          <span class="tick-sep">·</span>
-          <span class="tick-item">Web Development</span>
-          <span class="tick-sep">·</span>
-          <span class="tick-item">Platform Architecture</span>
-          <span class="tick-sep">·</span>
-          <!-- Duplicate for seamless loop -->
-          <span class="tick-item"><span class="tick-dot"></span>Serial Entrepreneur</span>
-          <span class="tick-sep">·</span>
-          <span class="tick-item">4 Active Companies</span>
-          <span class="tick-sep">·</span>
-          <span class="tick-item">30+ Projects Delivered</span>
-          <span class="tick-sep">·</span>
-          <span class="tick-item">Bangladesh 🇧🇩</span>
-          <span class="tick-sep">·</span>
-          <span class="tick-item">Open to Partnerships</span>
-          <span class="tick-sep">·</span>
-          <span class="tick-item">App Development</span>
-          <span class="tick-sep">·</span>
-          <span class="tick-item">Web Development</span>
-          <span class="tick-sep">·</span>
-          <span class="tick-item">Platform Architecture</span>
-          <span class="tick-sep">·</span>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-wrap">
+      <a href="#" class="nav-brand">
+        <span class="nb-dot"></span>
+        <span>ARSHAON</span>
+      </a>
+      <div class="nav-right">
+        <div class="nav-status">
+          <span class="nst-pulse"></span>
+          <span>Available for work</span>
         </div>
-        <div class="ticker-time" id="ticker-time">00:00</div>
+        <a href="#contact" class="btn-hire mag-btn" id="nav-hire">Hire Me</a>
+        <button class="nav-burger" id="nav-burger" aria-label="Menu">
+          <span></span><span></span>
+        </button>
       </div>
     </div>
-
-    <!-- MAIN NAV -->
-    <nav class="navbar" id="navbar">
-      <div class="nav-inner">
-        <!-- Logo Left -->
-        <a href="#hero" class="nav-logo" aria-label="Home">
-          <div class="logo-mark">
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="lm-g" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#C9A84C"/>
-                  <stop offset="100%" stop-color="#8B6914"/>
-                </linearGradient>
-              </defs>
-              <rect x="1" y="1" width="42" height="42" rx="8" stroke="url(#lm-g)" stroke-width="1.2" fill="none"/>
-              <path d="M13 34 L22 12 L31 34" stroke="url(#lm-g)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="16" y1="26" x2="28" y2="26" stroke="url(#lm-g)" stroke-width="2.5" stroke-linecap="round"/>
-              <rect x="6" y="6" width="6" height="2" rx="1" fill="rgba(201,168,76,0.3)"/>
-              <rect x="32" y="36" width="6" height="2" rx="1" fill="rgba(201,168,76,0.3)"/>
-            </svg>
-          </div>
-          <div class="logo-text-block">
-            <span class="logo-name">ARSHAON</span>
-            <span class="logo-sub">Entrepreneur &amp; Creator</span>
-          </div>
-        </a>
-
-        <!-- Center Nav Links -->
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-          <li><a href="#ventures" class="nav-link" data-section="ventures">Ventures</a></li>
-          <li><a href="#portfolio" class="nav-link" data-section="portfolio">Work</a></li>
-          <li><a href="#process" class="nav-link" data-section="process">Process</a></li>
-          <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
-          <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
-        </ul>
-
-        <!-- Right CTA -->
-        <div class="nav-right">
-          <div class="nav-status">
-            <span class="ns-dot"></span>
-            <span>Available</span>
-          </div>
-          <a href="#contact" class="btn btn-hire" id="nav-hire">Hire Me</a>
-          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
-    </nav>
-  </header>
+  </nav>
 
   <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <div class="mob-bg"></div>
-    <div class="mob-content">
-      <ul class="mob-links">
-        <li><a href="#about" class="mob-link">About</a></li>
-        <li><a href="#ventures" class="mob-link">Ventures</a></li>
-        <li><a href="#portfolio" class="mob-link">Work</a></li>
-        <li><a href="#process" class="mob-link">Process</a></li>
-        <li><a href="#skills" class="mob-link">Skills</a></li>
-        <li><a href="#contact" class="mob-link">Contact</a></li>
-      </ul>
-      <a href="#contact" class="btn btn-hire mob-cta">Hire Me</a>
-      <div class="mob-meta">
-        <span>Bangladesh 🇧🇩</span>
-        <span>·</span>
-        <span class="mob-time" id="mob-time">00:00</span>
-      </div>
-    </div>
+  <div class="mob-overlay" id="mob-overlay">
+    <nav class="mob-nav">
+      <a href="#bio" class="mob-nl">Profile</a>
+      <a href="#ventures" class="mob-nl">Ventures</a>
+      <a href="#work" class="mob-nl">Work</a>
+      <a href="#skills" class="mob-nl">Skills</a>
+      <a href="#contact" class="mob-nl">Contact</a>
+    </nav>
   </div>
 
-  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <!-- ════════════════ HERO ════════════════ -->
   <section class="hero" id="hero">
-    <div class="hero-layout">
 
-      <!-- Left: Avatar card -->
-      <div class="hero-card-col">
-        <div class="hero-id-card">
-          <div class="card-top-bar">
-            <span class="ctb-label">DIGITAL ID</span>
-            <span class="ctb-year">EST. 2021</span>
-          </div>
+    <div class="hero-label">
+      <span class="hl-line"></span>
+      <span>Serial Entrepreneur &amp; Digital Creator</span>
+      <span class="hl-flag">🇧🇩 Bangladesh</span>
+    </div>
 
-          <!-- Portrait -->
-          <div class="portrait-wrap">
-            <div class="portrait-inner">
-              <svg class="portrait-svg" viewBox="0 0 280 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="hero-type">
+      <div class="ht-row">
+        <span class="ht-word ht-fill">ASHIKUR</span>
+      </div>
+      <div class="ht-row">
+        <span class="ht-word ht-stroke">RAHMAN</span>
+        <div class="ht-id-float">
+          <!-- Floating ID card -->
+          <div class="fid-card">
+            <div class="fid-top">
+              <span class="fid-label">DIGITAL ID</span>
+              <span class="fid-dot"></span>
+            </div>
+            <div class="fid-avatar">
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#111827"/>
-                    <stop offset="100%" stop-color="#0A0F1A"/>
+                  <linearGradient id="av-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1A1A1A"/>
+                    <stop offset="100%" stop-color="#0A0A0A"/>
                   </linearGradient>
-                  <linearGradient id="skin-g" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <linearGradient id="av-skin" x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" stop-color="#C8865A"/>
                     <stop offset="100%" stop-color="#A8694A"/>
                   </linearGradient>
-                  <linearGradient id="suit-g" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#1C2A3A"/>
-                    <stop offset="100%" stop-color="#0E1820"/>
+                  <linearGradient id="av-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#D4AF37"/>
+                    <stop offset="100%" stop-color="#998024"/>
                   </linearGradient>
-                  <linearGradient id="gold-g" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#C9A84C"/>
-                    <stop offset="100%" stop-color="#8B6914"/>
+                  <linearGradient id="av-suit" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1C2438"/>
+                    <stop offset="100%" stop-color="#0E1218"/>
                   </linearGradient>
-                  <filter id="soft-shadow"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="rgba(0,0,0,0.5)"/></filter>
-                  <radialGradient id="ambient" cx="50%" cy="25%" r="65%">
-                    <stop offset="0%" stop-color="rgba(201,168,76,0.12)"/>
-                    <stop offset="100%" stop-color="transparent"/>
-                  </radialGradient>
+                  <clipPath id="av-clip"><circle cx="60" cy="60" r="58"/></clipPath>
                 </defs>
-                <!-- Background -->
-                <rect width="280" height="340" fill="url(#bg-grad)"/>
-                <rect width="280" height="340" fill="url(#ambient)"/>
-
-                <!-- Subtle grid lines in bg -->
-                <line x1="0" y1="56" x2="56" y2="0" stroke="rgba(201,168,76,0.06)" stroke-width="1"/>
-                <line x1="0" y1="112" x2="112" y2="0" stroke="rgba(201,168,76,0.04)" stroke-width="1"/>
-                <line x1="224" y1="340" x2="280" y2="284" stroke="rgba(201,168,76,0.06)" stroke-width="1"/>
-
-                <!-- SUIT / BODY -->
-                <ellipse cx="140" cy="318" rx="105" ry="60" fill="url(#suit-g)"/>
-                <!-- Left lapel -->
-                <path d="M108 250 L122 295 L140 278 L158 295 L172 250" fill="url(#suit-g)" stroke="rgba(201,168,76,0.2)" stroke-width="1.2"/>
-                <!-- Tie -->
-                <path d="M140 276 L133 300 L140 308 L147 300 Z" fill="#8B6914" opacity="0.6"/>
-                <line x1="140" y1="276" x2="140" y2="318" stroke="rgba(201,168,76,0.25)" stroke-width="1.5"/>
-                <!-- Shirt white collar -->
-                <path d="M124 255 L134 272 L140 265 L146 272 L156 255" fill="rgba(240,235,225,0.9)" stroke="rgba(201,168,76,0.3)" stroke-width="0.8"/>
-
-                <!-- NECK -->
-                <rect x="126" y="216" width="28" height="46" rx="10" fill="url(#skin-g)"/>
-                <ellipse cx="140" cy="262" rx="16" ry="5" fill="rgba(0,0,0,0.2)"/>
-
-                <!-- EARS -->
-                <ellipse cx="64" cy="160" rx="12" ry="16" fill="#B87650"/>
-                <ellipse cx="64" cy="160" rx="7" ry="10" fill="#A8694A"/>
-                <ellipse cx="216" cy="160" rx="12" ry="16" fill="#B87650"/>
-                <ellipse cx="216" cy="160" rx="7" ry="10" fill="#A8694A"/>
-
-                <!-- HEAD -->
-                <ellipse cx="140" cy="152" rx="72" ry="82" fill="url(#skin-g)" filter="url(#soft-shadow)"/>
-
-                <!-- HAIR — short professional cut -->
-                <path d="M70 140 Q73 72 140 66 Q207 72 210 140 Q200 88 180 82 Q162 74 140 75 Q118 74 100 82 Q80 88 70 140Z" fill="#1A0E07"/>
-                <ellipse cx="140" cy="74" rx="58" ry="11" fill="#1A0E07"/>
-                <!-- Side fades -->
-                <path d="M70 140 Q68 116 73 98 Q80 80 90 77 Q78 104 75 126Z" fill="#140B04"/>
-                <path d="M210 140 Q212 116 207 98 Q200 80 190 77 Q202 104 205 126Z" fill="#140B04"/>
-
-                <!-- EYEBROWS — sharper professional -->
-                <path d="M100 133 Q113 126 128 128" stroke="#261508" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-                <path d="M152 128 Q167 126 180 133" stroke="#261508" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-
-                <!-- EYES -->
-                <ellipse cx="114" cy="150" rx="15" ry="10" fill="white"/>
-                <ellipse cx="166" cy="150" rx="15" ry="10" fill="white"/>
-                <circle cx="114" cy="150" r="7.5" fill="#1E0F06"/>
-                <circle cx="166" cy="150" r="7.5" fill="#1E0F06"/>
-                <circle cx="114" cy="150" r="4.5" fill="#050200"/>
-                <circle cx="166" cy="150" r="4.5" fill="#050200"/>
-                <!-- Catch light -->
-                <circle cx="116" cy="147" r="2.2" fill="rgba(255,255,255,0.85)"/>
-                <circle cx="168" cy="147" r="2.2" fill="rgba(255,255,255,0.85)"/>
-                <!-- Eyelids -->
-                <path d="M99 143 Q114 136 129 143" stroke="#261508" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-                <path d="M151 143 Q166 136 181 143" stroke="#261508" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-
-                <!-- NOSE -->
-                <path d="M140 162 Q135 178 130 184 Q140 190 150 184 Q145 178 140 162Z" fill="rgba(0,0,0,0.12)"/>
-                <ellipse cx="133" cy="184" rx="6" ry="4.5" fill="rgba(0,0,0,0.17)"/>
-                <ellipse cx="147" cy="184" rx="6" ry="4.5" fill="rgba(0,0,0,0.17)"/>
-
-                <!-- MOUTH — confident slight smile -->
-                <path d="M126 200 Q133 207 140 208 Q147 207 154 200" stroke="#7A3D28" stroke-width="2" stroke-linecap="round" fill="none"/>
-                <path d="M126 200 Q133 205 140 206 Q147 205 154 200 Q147 210 140 211 Q133 210 126 200Z" fill="rgba(180,90,60,0.15)"/>
-
-                <!-- PROFESSIONAL GLASSES (gold frame) -->
-                <rect x="96" y="140" width="36" height="22" rx="7" stroke="#C9A84C" stroke-width="1.8" fill="rgba(201,168,76,0.05)"/>
-                <rect x="148" y="140" width="36" height="22" rx="7" stroke="#C9A84C" stroke-width="1.8" fill="rgba(201,168,76,0.05)"/>
-                <line x1="132" y1="151" x2="148" y2="151" stroke="#C9A84C" stroke-width="1.8"/>
-                <line x1="96" y1="151" x2="72" y2="154" stroke="#C9A84C" stroke-width="1.5"/>
-                <line x1="184" y1="151" x2="208" y2="154" stroke="#C9A84C" stroke-width="1.5"/>
-                <!-- Lens glare -->
-                <line x1="102" y1="144" x2="109" y2="148" stroke="rgba(255,255,255,0.25)" stroke-width="1" stroke-linecap="round"/>
-                <line x1="154" y1="144" x2="161" y2="148" stroke="rgba(255,255,255,0.25)" stroke-width="1" stroke-linecap="round"/>
-
-                <!-- Light beard shadow -->
-                <path d="M108 200 Q118 218 140 221 Q162 218 172 200 Q160 212 140 215 Q120 212 108 200Z" fill="rgba(15,5,0,0.18)"/>
-
-                <!-- Card bottom info bar -->
-                <rect x="0" y="298" width="280" height="42" fill="rgba(0,0,0,0.6)"/>
-                <text x="140" y="316" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" font-weight="600" fill="#C9A84C" letter-spacing="2">ASHIKUR RAHMAN SHAON</text>
-                <text x="140" y="332" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="rgba(255,255,255,0.35)" letter-spacing="1.5">ENTREPRENEUR · BANGLADESH</text>
+                <circle cx="60" cy="60" r="60" fill="url(#av-bg)"/>
+                <!-- Suit -->
+                <ellipse cx="60" cy="118" rx="48" ry="28" fill="url(#av-suit)"/>
+                <path d="M44 88 L52 108 L60 98 L68 108 L76 88" fill="url(#av-suit)" stroke="rgba(212,175,55,0.18)" stroke-width="0.6"/>
+                <!-- Shirt -->
+                <path d="M51 90 L58 98 L60 94 L62 98 L69 90" fill="rgba(240,238,230,0.85)"/>
+                <!-- Neck -->
+                <rect x="52" y="78" width="16" height="16" rx="6" fill="url(#av-skin)"/>
+                <!-- Head -->
+                <ellipse cx="60" cy="54" rx="30" ry="34" fill="url(#av-skin)"/>
+                <!-- Ears -->
+                <ellipse cx="30" cy="54" rx="5" ry="7" fill="#B87650"/>
+                <ellipse cx="90" cy="54" rx="5" ry="7" fill="#B87650"/>
+                <!-- Hair -->
+                <path d="M30 44 Q32 20 60 18 Q88 20 90 44 Q82 28 72 24 Q62 20 60 21 Q58 20 48 24 Q38 28 30 44Z" fill="#18100A"/>
+                <ellipse cx="60" cy="21" rx="25" ry="5" fill="#18100A"/>
+                <!-- Eyebrows -->
+                <path d="M40 44 Q48 40 54 42" stroke="#1C0C04" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <path d="M66 42 Q72 40 80 44" stroke="#1C0C04" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <!-- Eyes -->
+                <ellipse cx="46" cy="52" rx="7" ry="5" fill="white"/>
+                <ellipse cx="74" cy="52" rx="7" ry="5" fill="white"/>
+                <circle cx="46" cy="52" r="3.5" fill="#100800"/>
+                <circle cx="74" cy="52" r="3.5" fill="#100800"/>
+                <circle cx="47" cy="50.5" r="1.2" fill="rgba(255,255,255,0.8)"/>
+                <circle cx="75" cy="50.5" r="1.2" fill="rgba(255,255,255,0.8)"/>
+                <!-- Glasses -->
+                <rect x="37" y="47" width="17" height="10" rx="4" stroke="url(#av-gold)" stroke-width="1.2" fill="rgba(212,175,55,0.04)"/>
+                <rect x="66" y="47" width="17" height="10" rx="4" stroke="url(#av-gold)" stroke-width="1.2" fill="rgba(212,175,55,0.04)"/>
+                <line x1="54" y1="52" x2="66" y2="52" stroke="url(#av-gold)" stroke-width="1.2"/>
+                <line x1="37" y1="52" x2="28" y2="54" stroke="url(#av-gold)" stroke-width="1"/>
+                <line x1="83" y1="52" x2="92" y2="54" stroke="url(#av-gold)" stroke-width="1"/>
+                <!-- Nose -->
+                <path d="M60 58 Q57 65 55 68 Q60 72 65 68 Q63 65 60 58Z" fill="rgba(0,0,0,0.1)"/>
+                <!-- Mouth -->
+                <path d="M52 74 Q56 78 60 79 Q64 78 68 74" stroke="#7A3D28" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                <!-- Beard shadow -->
+                <path d="M42 72 Q50 82 60 84 Q70 82 78 72 Q68 80 60 81 Q52 80 42 72Z" fill="rgba(10,4,0,0.14)"/>
               </svg>
             </div>
-            <div class="portrait-ring r1"></div>
-            <div class="portrait-ring r2"></div>
-          </div>
-
-          <!-- Card badges -->
-          <div class="card-badges">
-            <div class="cb-badge">
-              <span class="cbb-icon">🏢</span>
-              <div>
-                <span class="cbb-num">4</span>
-                <span class="cbb-label">Companies</span>
-              </div>
+            <div class="fid-info">
+              <strong>Ashikur Rahman Shaon</strong>
+              <span>Founder &amp; Creator</span>
             </div>
-            <div class="cb-divider"></div>
-            <div class="cb-badge">
-              <span class="cbb-icon">🚀</span>
-              <div>
-                <span class="cbb-num">30+</span>
-                <span class="cbb-label">Projects</span>
-              </div>
+            <div class="fid-chips">
+              <span>4 Companies</span>
+              <span>30+ Projects</span>
             </div>
-            <div class="cb-divider"></div>
-            <div class="cb-badge">
-              <span class="cbb-icon">🌐</span>
-              <div>
-                <span class="cbb-num">3+</span>
-                <span class="cbb-label">Yrs Exp.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Availability pill -->
-          <div class="card-avail">
-            <span class="avail-dot"></span>
-            <span>Open to new ventures & partnerships</span>
           </div>
         </div>
       </div>
-
-      <!-- Right: Text content -->
-      <div class="hero-text-col">
-        <div class="hero-eyebrow" data-reveal>
-          <span class="eyebrow-dash"></span>
-          <span>Serial Entrepreneur & Digital Creator</span>
-        </div>
-
-        <h1 class="hero-heading" data-reveal>
-          <span class="hh-line1">Building</span>
-          <span class="hh-line2">Digital</span>
-          <span class="hh-line3">Empires.</span>
-        </h1>
-
-        <p class="hero-sub" data-reveal>
-          I'm <strong>Ashikur Rahman Shaon</strong> — founder of multiple companies, builder of digital products, and architect of scalable systems. I turn ideas into profitable businesses.
-        </p>
-
-        <div class="hero-tags" data-reveal>
-          <span class="htag">App Development</span>
-          <span class="htag">Web Platforms</span>
-          <span class="htag">Business Systems</span>
-          <span class="htag">E-commerce</span>
-          <span class="htag">UI/UX Design</span>
-        </div>
-
-        <div class="hero-actions" data-reveal>
-          <a href="#ventures" class="btn btn-primary">
-            My Ventures
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="#portfolio" class="btn btn-secondary">View Work</a>
-          <a href="#contact" class="btn btn-outline">Hire Me</a>
-        </div>
-
-        <!-- Quote -->
-        <blockquote class="hero-quote" data-reveal>
-          <p>"From concept to company — I build systems that generate value, scale, and lasting opportunity."</p>
-          <cite>— Ashikur Rahman Shaon</cite>
-        </blockquote>
+      <div class="ht-row">
+        <span class="ht-word ht-gold">SHAON.</span>
       </div>
     </div>
 
-    <!-- Scroll hint -->
-    <div class="scroll-hint">
-      <div class="sh-line"></div>
-      <span>Scroll to explore</span>
+    <!-- Hero Stats Bar -->
+    <div class="hero-stats">
+      <div class="hs-item">
+        <span class="hs-num" data-count="4">0</span>
+        <span class="hs-label">Active<br/>Companies</span>
+      </div>
+      <div class="hs-div"></div>
+      <div class="hs-item">
+        <span class="hs-num" data-count="30">0</span><span class="hs-suf">+</span>
+        <span class="hs-label">Projects<br/>Delivered</span>
+      </div>
+      <div class="hs-div"></div>
+      <div class="hs-item">
+        <span class="hs-num" data-count="3">0</span><span class="hs-suf">+</span>
+        <span class="hs-label">Years<br/>Building</span>
+      </div>
+      <div class="hs-div"></div>
+      <div class="hs-item">
+        <span class="hs-num">100</span><span class="hs-suf">%</span>
+        <span class="hs-label">Client<br/>Satisfaction</span>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="hsc-line"></div>
+      <span>SCROLL</span>
+    </div>
+
+  </section>
+
+  <!-- ════════════════ BIO / PROFILE ════════════════ -->
+  <section class="bio section-gap" id="bio">
+    <div class="wrap">
+
+      <div class="bio-grid">
+
+        <!-- Left: Big type -->
+        <div class="bio-left rv">
+          <div class="bio-tag">Profile</div>
+          <h2 class="bio-heading">
+            Who I<br/>
+            <em>Really</em><br/>
+            Am.
+          </h2>
+          <p class="bio-sub">A builder at heart. An entrepreneur by choice. A creator by nature.</p>
+
+          <!-- Visual data rings -->
+          <div class="bio-rings">
+            <div class="br-item">
+              <svg viewBox="0 0 80 80" class="br-svg">
+                <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/>
+                <circle cx="40" cy="40" r="34" fill="none" stroke="#D4AF37" stroke-width="6"
+                  stroke-dasharray="213.6" stroke-dashoffset="21.4"
+                  stroke-linecap="round" transform="rotate(-90 40 40)" class="br-ring" data-pct="90"/>
+              </svg>
+              <div class="br-meta">
+                <span class="br-pct">90%</span>
+                <span class="br-name">App Dev</span>
+              </div>
+            </div>
+            <div class="br-item">
+              <svg viewBox="0 0 80 80" class="br-svg">
+                <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/>
+                <circle cx="40" cy="40" r="34" fill="none" stroke="#D4AF37" stroke-width="6"
+                  stroke-dasharray="213.6" stroke-dashoffset="21.4"
+                  stroke-linecap="round" transform="rotate(-90 40 40)" class="br-ring" data-pct="95"/>
+              </svg>
+              <div class="br-meta">
+                <span class="br-pct">95%</span>
+                <span class="br-name">Web Dev</span>
+              </div>
+            </div>
+            <div class="br-item">
+              <svg viewBox="0 0 80 80" class="br-svg">
+                <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/>
+                <circle cx="40" cy="40" r="34" fill="none" stroke="#D4AF37" stroke-width="6"
+                  stroke-dasharray="213.6" stroke-dashoffset="21.4"
+                  stroke-linecap="round" transform="rotate(-90 40 40)" class="br-ring" data-pct="85"/>
+              </svg>
+              <div class="br-meta">
+                <span class="br-pct">85%</span>
+                <span class="br-name">UI/UX</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Biodata card (like a digital ID) -->
+        <div class="bio-right rv">
+          <div class="biodata-card">
+            <div class="bdc-header">
+              <div class="bdc-avatar-wrap">
+                <svg viewBox="0 0 72 72" fill="none">
+                  <defs>
+                    <linearGradient id="bdc-g" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#D4AF37"/>
+                      <stop offset="100%" stop-color="#998024"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="36" cy="36" r="35" fill="#1A1A1A" stroke="url(#bdc-g)" stroke-width="1.5"/>
+                  <circle cx="36" cy="28" r="12" fill="#C8865A" opacity="0.9"/>
+                  <ellipse cx="36" cy="58" rx="20" ry="12" fill="#C8865A" opacity="0.7"/>
+                  <!-- Glasses hint -->
+                  <rect x="21" y="25" width="11" height="7" rx="3" stroke="#D4AF37" stroke-width="1" fill="rgba(212,175,55,0.05)"/>
+                  <rect x="40" y="25" width="11" height="7" rx="3" stroke="#D4AF37" stroke-width="1" fill="rgba(212,175,55,0.05)"/>
+                  <line x1="32" y1="28.5" x2="40" y2="28.5" stroke="#D4AF37" stroke-width="1"/>
+                </svg>
+                <div class="bdc-avail">
+                  <span></span>
+                  <span>Available</span>
+                </div>
+              </div>
+              <div class="bdc-head-info">
+                <h3>Ashikur Rahman Shaon</h3>
+                <p>Founder, CEO &amp; Digital Creator</p>
+                <div class="bdc-socials">
+                  <a href="mailto:arshaonone@gmail.com" class="bdc-social-pill" title="Email">Email</a>
+                  <a href="https://wa.me/8801787081119" class="bdc-social-pill wa-pill" title="WhatsApp">WhatsApp</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="bdc-rows">
+              <div class="bdc-row">
+                <span class="bdc-key">Full Name</span>
+                <span class="bdc-val">Ashikur Rahman Shaon</span>
+              </div>
+              <div class="bdc-row">
+                <span class="bdc-key">Nationality</span>
+                <span class="bdc-val">Bangladeshi 🇧🇩</span>
+              </div>
+              <div class="bdc-row">
+                <span class="bdc-key">Location</span>
+                <span class="bdc-val">Bangladesh</span>
+              </div>
+              <div class="bdc-row">
+                <span class="bdc-key">Role</span>
+                <span class="bdc-val">Serial Entrepreneur</span>
+              </div>
+              <div class="bdc-row">
+                <span class="bdc-key">Email</span>
+                <span class="bdc-val">arshaonone@gmail.com</span>
+              </div>
+              <div class="bdc-row">
+                <span class="bdc-key">Phone</span>
+                <span class="bdc-val">+880 178 708 1119</span>
+              </div>
+              <div class="bdc-row">
+                <span class="bdc-key">Website</span>
+                <span class="bdc-val gold-val">arshaon.com</span>
+              </div>
+              <div class="bdc-row">
+                <span class="bdc-key">Status</span>
+                <span class="bdc-val avail-val">
+                  <span class="av-dot-sm"></span>
+                  Open to Ventures &amp; Projects
+                </span>
+              </div>
+            </div>
+
+            <div class="bdc-focus">
+              <span class="bdc-focus-label">Expertise</span>
+              <div class="bdc-tags">
+                <span>App Development</span>
+                <span>Web Platforms</span>
+                <span>E-commerce</span>
+                <span>UI/UX</span>
+                <span>Business Systems</span>
+                <span>Brand Strategy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- ═══════════════════ ABOUT ═══════════════════ -->
-  <section class="about section-pad" id="about">
-    <div class="container">
-      <div class="section-label" data-reveal>Who I Am</div>
+  <!-- ════════════════ VENTURES ════════════════ -->
+  <section class="ventures section-gap" id="ventures">
+    <div class="wrap">
+      <div class="sec-top rv">
+        <div class="sec-tag">My Companies</div>
+        <h2 class="sec-heading">4 Active<br/><em>Ventures</em></h2>
+        <p class="sec-sub">Founding and building companies across tech, media, design, and commerce.</p>
+      </div>
+    </div>
 
-      <div class="about-grid">
-        <div class="about-left" data-reveal>
-          <h2 class="section-heading">
-            Entrepreneur.<br/>
-            <em>Builder.</em><br/>
-            <span class="text-gold">Creator.</span>
-          </h2>
+    <!-- iOS-style horizontal scroll -->
+    <div class="ventures-scroll" id="ventures-scroll">
+      <div class="vs-inner">
 
-          <p class="body-para">
-            I'm Ashikur Rahman Shaon — a serial entrepreneur and digital creator based in Bangladesh. I don't just build websites and apps; I build <strong>businesses</strong>. Every product I create is designed with a business model, a growth path, and a clear value proposition.
-          </p>
-          <p class="body-para">
-            Over the last three years, I've founded multiple companies across app development, e-commerce, branding, and digital platforms. I combine deep technical skill with entrepreneurial vision to deliver products that generate real revenue and scalable impact.
-          </p>
-          <p class="body-para">
-            Whether it's a mobile app, a full platform, or a complete business system — I approach every project as if I'm the founder, because most of the time, I am.
-          </p>
-
-          <div class="about-stats">
-            <div class="astat">
-              <span class="astat-num" data-count="4">0</span>
-              <span class="astat-label">Active Companies</span>
+        <div class="vc-card rv">
+          <div class="vcc-top">
+            <div class="vcc-icon vi-gold">
+              <svg viewBox="0 0 36 36" fill="none">
+                <path d="M18 6 L30 12 L30 24 L18 30 L6 24 L6 12 Z" stroke="#D4AF37" stroke-width="1.5" fill="none"/>
+                <circle cx="18" cy="18" r="5" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
+                <line x1="18" y1="6" x2="18" y2="13" stroke="#D4AF37" stroke-width="1"/>
+              </svg>
             </div>
-            <div class="astat">
-              <span class="astat-num" data-count="30">0</span><span class="astat-suf">+</span>
-              <span class="astat-label">Projects Built</span>
-            </div>
-            <div class="astat">
-              <span class="astat-num" data-count="3">0</span><span class="astat-suf">+</span>
-              <span class="astat-label">Years Building</span>
-            </div>
+            <span class="vcc-status">Active</span>
           </div>
-
-          <div class="about-cta">
-            <a href="#ventures" class="btn btn-primary">My Companies →</a>
-            <a href="#contact" class="btn btn-outline">Work Together</a>
+          <div class="vcc-num">01</div>
+          <h3 class="vcc-name">Reels Platform Co.</h3>
+          <p class="vcc-type">Video Tech · Content Platform</p>
+          <p class="vcc-desc">A dynamic short-form video platform connecting creators with audiences. Built for viral growth and creator monetization.</p>
+          <div class="vcc-bar">
+            <div class="vcc-progress" style="width:78%"></div>
           </div>
+          <span class="vcc-pct">78% Growth YoY</span>
         </div>
 
-        <div class="about-right" data-reveal>
-          <!-- Info card -->
-          <div class="about-info-card card-glass">
-            <div class="aic-header">
-              <div class="aic-avatar">
-                <svg viewBox="0 0 56 56" fill="none">
-                  <defs><linearGradient id="ai-g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#C9A84C"/><stop offset="100%" stop-color="#8B6914"/></linearGradient></defs>
-                  <circle cx="28" cy="28" r="27" fill="#111827" stroke="url(#ai-g)" stroke-width="1.5"/>
-                  <circle cx="28" cy="21" r="10" fill="rgba(201,168,76,0.2)"/>
-                  <ellipse cx="28" cy="42" rx="16" ry="10" fill="rgba(201,168,76,0.15)"/>
-                  <circle cx="24" cy="20" r="2.5" fill="#C9A84C" opacity="0.8"/>
-                  <circle cx="32" cy="20" r="2.5" fill="#C9A84C" opacity="0.8"/>
-                  <path d="M23 25 Q28 29 33 25" stroke="#C9A84C" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-                  <rect x="20" y="17" width="7" height="4.5" rx="1.8" stroke="#C9A84C" stroke-width="0.8" fill="none"/>
-                  <rect x="29" y="17" width="7" height="4.5" rx="1.8" stroke="#C9A84C" stroke-width="0.8" fill="none"/>
-                  <line x1="27" y1="19.25" x2="29" y2="19.25" stroke="#C9A84C" stroke-width="0.8"/>
+        <div class="vc-card rv">
+          <div class="vcc-top">
+            <div class="vcc-icon vi-blue">
+              <svg viewBox="0 0 36 36" fill="none">
+                <rect x="4" y="8" width="28" height="20" rx="4" stroke="#7B9CF4" stroke-width="1.5" fill="none"/>
+                <line x1="4" y1="14" x2="32" y2="14" stroke="#7B9CF4" stroke-width="1.5"/>
+                <rect x="8" y="18" width="10" height="6" rx="1.5" fill="rgba(123,156,244,0.2)" stroke="#7B9CF4" stroke-width="1"/>
+                <rect x="20" y="18" width="8" height="6" rx="1.5" fill="rgba(123,156,244,0.1)" stroke="#7B9CF4" stroke-width="0.8"/>
+              </svg>
+            </div>
+            <span class="vcc-status">Active</span>
+          </div>
+          <div class="vcc-num">02</div>
+          <h3 class="vcc-name">Digital Commerce Hub</h3>
+          <p class="vcc-type">E-commerce · Retail Technology</p>
+          <p class="vcc-desc">Complete e-commerce ecosystem for Bangladeshi businesses — from storefront to payment to delivery management.</p>
+          <div class="vcc-bar">
+            <div class="vcc-progress vp-blue" style="width:65%"></div>
+          </div>
+          <span class="vcc-pct">65% MoM Revenue Growth</span>
+        </div>
+
+        <div class="vc-card rv">
+          <div class="vcc-top">
+            <div class="vcc-icon vi-green">
+              <svg viewBox="0 0 36 36" fill="none">
+                <circle cx="18" cy="18" r="12" stroke="#34C47A" stroke-width="1.5" fill="none"/>
+                <circle cx="18" cy="18" r="5" fill="rgba(52,196,122,0.15)" stroke="#34C47A" stroke-width="1"/>
+                <line x1="18" y1="6" x2="18" y2="11" stroke="#34C47A" stroke-width="1.5"/>
+                <line x1="18" y1="25" x2="18" y2="30" stroke="#34C47A" stroke-width="1.5"/>
+                <line x1="6" y1="18" x2="11" y2="18" stroke="#34C47A" stroke-width="1.5"/>
+                <line x1="25" y1="18" x2="30" y2="18" stroke="#34C47A" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <span class="vcc-status">Active</span>
+          </div>
+          <div class="vcc-num">03</div>
+          <h3 class="vcc-name">Brand Studio</h3>
+          <p class="vcc-type">Design · Branding · Creative</p>
+          <p class="vcc-desc">Premium branding studio delivering identity systems, digital presence, and creative strategy for ambitious businesses.</p>
+          <div class="vcc-bar">
+            <div class="vcc-progress vp-green" style="width:55%"></div>
+          </div>
+          <span class="vcc-pct">55+ Clients Served</span>
+        </div>
+
+        <div class="vc-card rv">
+          <div class="vcc-top">
+            <div class="vcc-icon vi-red">
+              <svg viewBox="0 0 36 36" fill="none">
+                <rect x="6" y="6" width="24" height="24" rx="4" stroke="#E87272" stroke-width="1.5" fill="none"/>
+                <line x1="12" y1="12" x2="24" y2="12" stroke="#E87272" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="12" y1="17" x2="20" y2="17" stroke="#E87272" stroke-width="1" stroke-linecap="round"/>
+                <line x1="12" y1="22" x2="22" y2="22" stroke="#E87272" stroke-width="1" stroke-linecap="round"/>
+                <circle cx="28" cy="28" r="5" fill="#E87272"/>
+                <line x1="28" y1="25" x2="28" y2="31" stroke="white" stroke-width="1.5"/>
+                <line x1="25" y1="28" x2="31" y2="28" stroke="white" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <span class="vcc-status growing">Growing</span>
+          </div>
+          <div class="vcc-num">04</div>
+          <h3 class="vcc-name">Systems Lab</h3>
+          <p class="vcc-type">SaaS · Business Automation</p>
+          <p class="vcc-desc">Plug-and-play business automation tools helping SMEs operate smarter, scale faster, and generate more revenue.</p>
+          <div class="vcc-bar">
+            <div class="vcc-progress vp-red" style="width:42%"></div>
+          </div>
+          <span class="vcc-pct">Early Traction · Scaling</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ WORK / PROJECTS ════════════════ -->
+  <section class="work section-gap" id="work">
+    <div class="wrap">
+
+      <div class="work-top rv">
+        <div class="sec-tag">Selected Projects</div>
+        <h2 class="sec-heading">Work That<br/><em>Matters</em></h2>
+      </div>
+
+      <div class="work-list">
+
+        <div class="wl-item rv" id="wl-1">
+          <div class="wl-left">
+            <div class="wl-num">01</div>
+            <div class="wl-info">
+              <div class="wl-tags">
+                <span>React Native</span>
+                <span>Node.js</span>
+                <span>Video Streaming</span>
+              </div>
+              <h3 class="wl-title">Reels App Platform</h3>
+              <p class="wl-desc">Dynamic short-form video sharing platform — built for viral growth, creator monetization, and South Asian audiences.</p>
+            </div>
+          </div>
+          <div class="wl-right">
+            <div class="wl-preview wp-1">
+              <div class="wlp-inner">
+                <!-- Phone mockup SVG -->
+                <svg viewBox="0 0 100 180" fill="none">
+                  <rect x="5" y="2" width="90" height="176" rx="16" fill="#111" stroke="rgba(212,175,55,0.3)" stroke-width="1"/>
+                  <rect x="10" y="8" width="80" height="164" rx="12" fill="#181818"/>
+                  <!-- Screen content -->
+                  <rect x="10" y="8" width="80" height="164" rx="12" fill="url(#phone-grad)"/>
+                  <defs>
+                    <linearGradient id="phone-grad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="rgba(212,175,55,0.1)"/>
+                      <stop offset="100%" stop-color="rgba(0,0,0,0.8)"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="50" cy="90" r="18" fill="rgba(212,175,55,0.15)"/>
+                  <polygon points="44,82 44,98 60,90" fill="#D4AF37"/>
+                  <rect x="18" y="140" width="40" height="4" rx="2" fill="rgba(212,175,55,0.5)"/>
+                  <rect x="18" y="150" width="26" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+                  <!-- Top notch -->
+                  <rect x="36" y="10" width="28" height="6" rx="3" fill="#0A0A0A"/>
                 </svg>
               </div>
-              <div>
-                <p class="aic-name">Ashikur Rahman Shaon</p>
-                <p class="aic-title">Founder & Digital Creator</p>
-              </div>
             </div>
-
-            <div class="aic-items">
-              <div class="aic-item">
-                <span class="aic-icon">📍</span>
-                <div>
-                  <span class="aic-key">Location</span>
-                  <span class="aic-val">Bangladesh</span>
-                </div>
-              </div>
-              <div class="aic-item">
-                <span class="aic-icon">🏢</span>
-                <div>
-                  <span class="aic-key">Role</span>
-                  <span class="aic-val">Founder, CEO & Builder</span>
-                </div>
-              </div>
-              <div class="aic-item">
-                <span class="aic-icon">💼</span>
-                <div>
-                  <span class="aic-key">Focus</span>
-                  <span class="aic-val">Apps, Platforms, Systems</span>
-                </div>
-              </div>
-              <div class="aic-item">
-                <span class="aic-icon">🌐</span>
-                <div>
-                  <span class="aic-key">Website</span>
-                  <span class="aic-val">arshaon.com</span>
-                </div>
-              </div>
-              <div class="aic-item">
-                <span class="aic-icon">✅</span>
-                <div>
-                  <span class="aic-key">Status</span>
-                  <span class="aic-val available">Open to Work & Ventures</span>
-                </div>
-              </div>
+            <div class="wl-actions">
+              <a href="#" class="btn-sm-gold mag-btn">View Project</a>
+              <a href="#" class="btn-sm-ghost">Live →</a>
             </div>
           </div>
-
-          <!-- Expertise mini cards -->
-          <div class="expertise-chips">
-            <div class="exp-chip">App Development</div>
-            <div class="exp-chip">Web Development</div>
-            <div class="exp-chip">E-commerce</div>
-            <div class="exp-chip">UI/UX Design</div>
-            <div class="exp-chip">Business Systems</div>
-            <div class="exp-chip">Platform Arch.</div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ═══════════════════ VENTURES ═══════════════════ -->
-  <section class="ventures section-pad" id="ventures">
-    <div class="container">
-      <div class="section-label" data-reveal>My Companies</div>
-      <div class="ventures-head" data-reveal>
-        <h2 class="section-heading">
-          The <span class="text-gold italic-text">Ventures</span><br/>
-          I've Built
-        </h2>
-        <p class="section-desc">A portfolio of companies across digital media, tech, e-commerce, and creative services.</p>
-      </div>
-
-      <div class="ventures-grid">
-
-        <div class="venture-card card-glass" data-reveal>
-          <div class="vc-top">
-            <div class="vc-icon vc-i1">
-              <svg viewBox="0 0 40 40" fill="none">
-                <rect width="40" height="40" rx="10" fill="rgba(201,168,76,0.1)"/>
-                <circle cx="20" cy="16" r="7" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
-                <rect x="8" y="26" width="24" height="10" rx="3" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
-                <line x1="14" y1="30" x2="26" y2="30" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="14" y1="33" x2="22" y2="33" stroke="#C9A84C" stroke-width="1" stroke-linecap="round"/>
-              </svg>
+        <div class="wl-item rv" id="wl-2">
+          <div class="wl-left">
+            <div class="wl-num">02</div>
+            <div class="wl-info">
+              <div class="wl-tags">
+                <span>Next.js</span>
+                <span>Stripe</span>
+                <span>E-commerce</span>
+              </div>
+              <h3 class="wl-title">E-commerce System</h3>
+              <p class="wl-desc">End-to-end commerce infrastructure — storefront, cart, payment, inventory. Built to generate revenue from day one.</p>
             </div>
-            <div class="vc-status active-v">Active</div>
           </div>
-          <h3 class="vc-name">Reels Platform Co.</h3>
-          <p class="vc-type">Video Tech · Content Platform</p>
-          <p class="vc-desc">A dynamic short-form video platform connecting creators with audiences across Bangladesh and South Asia. Monetization-first architecture.</p>
-          <div class="vc-meta">
-            <span>📱 Mobile App</span>
-            <span>🌍 SaaS</span>
-          </div>
-          <a href="#" class="vc-link">Explore →</a>
-        </div>
-
-        <div class="venture-card card-glass" data-reveal>
-          <div class="vc-top">
-            <div class="vc-icon vc-i2">
-              <svg viewBox="0 0 40 40" fill="none">
-                <rect width="40" height="40" rx="10" fill="rgba(100,120,200,0.1)"/>
-                <rect x="6" y="10" width="28" height="20" rx="4" fill="none" stroke="#8B9CF4" stroke-width="1.5"/>
-                <line x1="6" y1="16" x2="34" y2="16" stroke="#8B9CF4" stroke-width="1.5"/>
-                <circle cx="10" cy="13" r="1.5" fill="#8B9CF4"/>
-                <circle cx="14" cy="13" r="1.5" fill="#8B9CF4"/>
-                <rect x="10" y="21" width="8" height="5" rx="1.5" fill="rgba(139,156,244,0.3)" stroke="#8B9CF4" stroke-width="1"/>
-                <rect x="22" y="21" width="8" height="5" rx="1.5" fill="rgba(139,156,244,0.3)" stroke="#8B9CF4" stroke-width="1"/>
-              </svg>
+          <div class="wl-right">
+            <div class="wl-preview wp-2">
+              <div class="wlp-inner">
+                <svg viewBox="0 0 180 120" fill="none">
+                  <rect width="180" height="120" rx="10" fill="#0D0D0D" stroke="rgba(123,156,244,0.2)" stroke-width="1"/>
+                  <rect x="0" y="0" width="180" height="22" rx="10" fill="rgba(123,156,244,0.08)"/>
+                  <circle cx="14" cy="11" r="3.5" fill="rgba(255,80,80,0.5)"/>
+                  <circle cx="23" cy="11" r="3.5" fill="rgba(255,180,0,0.5)"/>
+                  <circle cx="32" cy="11" r="3.5" fill="rgba(50,200,80,0.5)"/>
+                  <rect x="10" y="30" width="48" height="60" rx="4" fill="rgba(123,156,244,0.07)" stroke="rgba(123,156,244,0.15)" stroke-width="0.8"/>
+                  <rect x="66" y="30" width="48" height="60" rx="4" fill="rgba(212,175,55,0.06)" stroke="rgba(212,175,55,0.18)" stroke-width="0.8"/>
+                  <rect x="122" y="30" width="48" height="60" rx="4" fill="rgba(123,156,244,0.05)" stroke="rgba(123,156,244,0.1)" stroke-width="0.8"/>
+                  <rect x="14" y="80" width="34" height="7" rx="3" stroke="rgba(123,156,244,0.5)" stroke-width="1" fill="rgba(123,156,244,0.1)"/>
+                  <rect x="70" y="80" width="34" height="7" rx="3" stroke="rgba(212,175,55,0.6)" stroke-width="1" fill="rgba(212,175,55,0.1)"/>
+                  <rect x="126" y="80" width="34" height="7" rx="3" stroke="rgba(123,156,244,0.4)" stroke-width="1" fill="rgba(123,156,244,0.05)"/>
+                </svg>
+              </div>
             </div>
-            <div class="vc-status active-v">Active</div>
-          </div>
-          <h3 class="vc-name">Digital Commerce Hub</h3>
-          <p class="vc-type">E-commerce · Retail Technology</p>
-          <p class="vc-desc">A complete e-commerce ecosystem enabling Bangladeshi entrepreneurs to sell online with world-class infrastructure and conversion-focused design.</p>
-          <div class="vc-meta">
-            <span>🛒 E-commerce</span>
-            <span>📊 Analytics</span>
-          </div>
-          <a href="#" class="vc-link">Explore →</a>
-        </div>
-
-        <div class="venture-card card-glass" data-reveal>
-          <div class="vc-top">
-            <div class="vc-icon vc-i3">
-              <svg viewBox="0 0 40 40" fill="none">
-                <rect width="40" height="40" rx="10" fill="rgba(50,180,120,0.1)"/>
-                <polygon points="20,6 34,14 34,26 20,34 6,26 6,14" fill="none" stroke="#34C47A" stroke-width="1.5"/>
-                <circle cx="20" cy="20" r="4" fill="none" stroke="#34C47A" stroke-width="1.5"/>
-                <line x1="20" y1="6" x2="20" y2="16" stroke="#34C47A" stroke-width="1"/>
-                <line x1="34" y1="14" x2="24" y2="20" stroke="#34C47A" stroke-width="1"/>
-                <line x1="34" y1="26" x2="24" y2="20" stroke="#34C47A" stroke-width="1"/>
-              </svg>
+            <div class="wl-actions">
+              <a href="#" class="btn-sm-gold mag-btn">View Project</a>
+              <a href="#" class="btn-sm-ghost">Live →</a>
             </div>
-            <div class="vc-status active-v">Active</div>
           </div>
-          <h3 class="vc-name">Brand Studio</h3>
-          <p class="vc-type">Design · Branding · Creative</p>
-          <p class="vc-desc">A premium branding and design studio delivering visual identity, digital presence, and creative strategy for businesses across multiple industries.</p>
-          <div class="vc-meta">
-            <span>🎨 Design</span>
-            <span>✨ Branding</span>
-          </div>
-          <a href="#" class="vc-link">Explore →</a>
         </div>
 
-        <div class="venture-card card-glass" data-reveal>
-          <div class="vc-top">
-            <div class="vc-icon vc-i4">
-              <svg viewBox="0 0 40 40" fill="none">
-                <rect width="40" height="40" rx="10" fill="rgba(240,100,100,0.08)"/>
-                <rect x="8" y="8" width="24" height="24" rx="5" fill="none" stroke="#E87070" stroke-width="1.5"/>
-                <line x1="14" y1="16" x2="26" y2="16" stroke="#E87070" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="14" y1="20" x2="22" y2="20" stroke="#E87070" stroke-width="1" stroke-linecap="round"/>
-                <line x1="14" y1="24" x2="24" y2="24" stroke="#E87070" stroke-width="1" stroke-linecap="round"/>
-                <circle cx="30" cy="30" r="6" fill="#E87070"/>
-                <line x1="30" y1="27" x2="30" y2="33" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="27" y1="30" x2="33" y2="30" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
+        <div class="wl-item rv featured-work" id="wl-3">
+          <div class="wl-left">
+            <div class="wl-num">03</div>
+            <div class="wl-info">
+              <div class="wl-tags">
+                <span>Branding</span>
+                <span>UI/UX</span>
+                <span class="feat-tag">Featured</span>
+              </div>
+              <h3 class="wl-title">Portfolio &amp; Brand</h3>
+              <p class="wl-desc">High-end personal branding site — premium aesthetic, conversion-optimized journeys, and editorial visual language.</p>
             </div>
-            <div class="vc-status growth-v">Growing</div>
           </div>
-          <h3 class="vc-name">Systems Lab</h3>
-          <p class="vc-type">SaaS · Business Systems</p>
-          <p class="vc-desc">Building plug-and-play business automation and digital infrastructure tools — helping SMEs operate smarter, faster, and at scale.</p>
-          <div class="vc-meta">
-            <span>⚙️ Automation</span>
-            <span>📈 SaaS</span>
-          </div>
-          <a href="#" class="vc-link">Explore →</a>
-        </div>
-
-      </div>
-
-      <!-- Ventures CTA bar -->
-      <div class="ventures-cta-bar" data-reveal>
-        <div class="vcb-left">
-          <span class="vcb-num">4</span>
-          <div>
-            <p class="vcb-title">Active Ventures</p>
-            <p class="vcb-sub">Across tech, media, design, and business systems</p>
-          </div>
-        </div>
-        <a href="#contact" class="btn btn-primary">Become a Partner →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════ PORTFOLIO ═══════════════════ -->
-  <section class="portfolio section-pad" id="portfolio">
-    <div class="container">
-      <div class="section-label" data-reveal>Selected Work</div>
-      <div class="port-head" data-reveal>
-        <h2 class="section-heading">Projects That <span class="text-gold italic-text">Moved</span> Business</h2>
-        <a href="#contact" class="btn btn-outline">Start a Project →</a>
-      </div>
-
-      <div class="projects-list">
-
-        <!-- Project 1 -->
-        <div class="proj-row card-glass" data-reveal>
-          <div class="pr-num">01</div>
-          <div class="pr-info">
-            <div class="pr-tags"><span>React Native</span><span>Node.js</span><span>Video</span></div>
-            <h3 class="pr-title">Reels App Platform</h3>
-            <p class="pr-desc">A dynamic video-sharing platform — upload, explore, interact with short-form content. Built for viral growth and creator monetization.</p>
-          </div>
-          <div class="pr-preview pp1">
-            <svg viewBox="0 0 220 140" fill="none">
-              <rect width="220" height="140" fill="rgba(20,10,5,0.5)"/>
-              <rect x="30" y="10" width="60" height="100" rx="8" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
-              <circle cx="60" cy="60" r="16" fill="rgba(201,168,76,0.15)" stroke="#C9A84C" stroke-width="1"/>
-              <polygon points="54,52 54,68 70,60" fill="#C9A84C"/>
-              <rect x="34" y="92" width="40" height="4" rx="2" fill="rgba(201,168,76,0.4)"/>
-              <rect x="110" y="15" width="90" height="110" rx="8" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.15)" stroke-width="1"/>
-              <rect x="118" y="24" width="74" height="35" rx="4" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.15)" stroke-width="0.8"/>
-              <rect x="118" y="64" width="74" height="35" rx="4" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.15)" stroke-width="0.8"/>
-              <text x="155" y="44" text-anchor="middle" font-family="Space Mono" font-size="9" fill="rgba(201,168,76,0.6)">1.2M</text>
-              <text x="155" y="84" text-anchor="middle" font-family="Space Mono" font-size="9" fill="rgba(201,168,76,0.4)">847K</text>
-            </svg>
-          </div>
-          <div class="pr-actions">
-            <a href="#" class="btn btn-sm btn-primary">View</a>
-            <a href="#" class="btn btn-sm btn-outline">Live</a>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="proj-row card-glass" data-reveal>
-          <div class="pr-num">02</div>
-          <div class="pr-info">
-            <div class="pr-tags"><span>Next.js</span><span>E-commerce</span><span>Stripe</span></div>
-            <h3 class="pr-title">E-commerce Website System</h3>
-            <p class="pr-desc">Complete online store solution designed for maximum conversion. End-to-end commerce infrastructure built to scale from day one.</p>
-          </div>
-          <div class="pr-preview pp2">
-            <svg viewBox="0 0 220 140" fill="none">
-              <rect width="220" height="140" fill="rgba(5,10,20,0.5)"/>
-              <rect x="10" y="10" width="200" height="120" rx="6" fill="rgba(139,156,244,0.04)" stroke="rgba(139,156,244,0.2)" stroke-width="1"/>
-              <rect x="10" y="10" width="200" height="22" rx="6" fill="rgba(139,156,244,0.1)"/>
-              <circle cx="22" cy="21" r="3.5" fill="rgba(255,80,80,0.6)"/>
-              <circle cx="31" cy="21" r="3.5" fill="rgba(255,190,60,0.6)"/>
-              <circle cx="40" cy="21" r="3.5" fill="rgba(60,200,80,0.6)"/>
-              <rect x="20" y="40" width="52" height="60" rx="4" fill="rgba(139,156,244,0.08)" stroke="rgba(139,156,244,0.2)" stroke-width="1"/>
-              <rect x="84" y="40" width="52" height="60" rx="4" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
-              <rect x="148" y="40" width="52" height="60" rx="4" fill="rgba(139,156,244,0.06)" stroke="rgba(139,156,244,0.15)" stroke-width="1"/>
-              <rect x="26" y="90" width="36" height="6" rx="3" fill="rgba(139,156,244,0.5)"/>
-              <rect x="90" y="90" width="36" height="6" rx="3" fill="rgba(201,168,76,0.5)"/>
-              <rect x="154" y="90" width="36" height="6" rx="3" fill="rgba(139,156,244,0.4)"/>
-            </svg>
-          </div>
-          <div class="pr-actions">
-            <a href="#" class="btn btn-sm btn-primary">View</a>
-            <a href="#" class="btn btn-sm btn-outline">Live</a>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="proj-row card-glass featured-proj" data-reveal>
-          <div class="pr-num">03</div>
-          <div class="pr-info">
-            <div class="pr-tags"><span>Branding</span><span>UI/UX</span><span>Portfolio</span></div>
-            <h3 class="pr-title">Portfolio &amp; Brand Website</h3>
-            <p class="pr-desc">Modern personal branding site with strong visual identity, premium feel, and conversion-optimized journeys — built to win high-value clients.</p>
-          </div>
-          <div class="pr-preview pp3">
-            <svg viewBox="0 0 220 140" fill="none">
-              <rect width="220" height="140" fill="rgba(10,8,0,0.5)"/>
-              <rect x="10" y="10" width="200" height="120" rx="6" fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.15)" stroke-width="1"/>
-              <circle cx="80" cy="55" r="26" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.25)" stroke-width="1"/>
-              <circle cx="80" cy="47" r="12" fill="rgba(201,168,76,0.15)"/>
-              <ellipse cx="80" cy="70" rx="18" ry="11" fill="rgba(201,168,76,0.1)"/>
-              <rect x="118" y="30" width="80" height="8" rx="2" fill="rgba(201,168,76,0.4)"/>
-              <rect x="118" y="44" width="60" height="5" rx="2" fill="rgba(255,255,255,0.1)"/>
-              <rect x="118" y="54" width="70" height="5" rx="2" fill="rgba(255,255,255,0.07)"/>
-              <rect x="118" y="66" width="50" height="14" rx="4" fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
-              <rect x="18" y="100" width="55" height="22" rx="4" fill="rgba(201,168,76,0.07)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
-              <rect x="82" y="100" width="55" height="22" rx="4" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.15)" stroke-width="1"/>
-              <rect x="146" y="100" width="55" height="22" rx="4" fill="rgba(201,168,76,0.07)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
-            </svg>
-          </div>
-          <div class="pr-actions">
-            <span class="pr-feat-badge">Featured</span>
-            <a href="#" class="btn btn-sm btn-primary">View</a>
-            <a href="#" class="btn btn-sm btn-outline">Live</a>
+          <div class="wl-right">
+            <div class="wl-preview wp-3">
+              <div class="wlp-inner">
+                <svg viewBox="0 0 180 120" fill="none">
+                  <rect width="180" height="120" rx="10" fill="#0A0800" stroke="rgba(212,175,55,0.2)" stroke-width="1"/>
+                  <text x="90" y="52" text-anchor="middle" font-family="Syne,sans-serif" font-size="28" font-weight="800" fill="rgba(212,175,55,0.18)" letter-spacing="2">ARSHAON</text>
+                  <circle cx="50" cy="60" r="22" fill="rgba(212,175,55,0.05)" stroke="rgba(212,175,55,0.2)" stroke-width="1"/>
+                  <circle cx="50" cy="53" r="9" fill="rgba(212,175,55,0.12)"/>
+                  <ellipse cx="50" cy="72" rx="14" ry="8" fill="rgba(212,175,55,0.08)"/>
+                  <rect x="84" y="44" width="70" height="6" rx="2" fill="rgba(212,175,55,0.4)"/>
+                  <rect x="84" y="56" width="50" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
+                  <rect x="84" y="66" width="58" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+                  <rect x="84" y="78" width="36" height="12" rx="4" fill="rgba(212,175,55,0.15)" stroke="rgba(212,175,55,0.4)" stroke-width="0.8"/>
+                  <text x="102" y="87" text-anchor="middle" font-family="syne" font-size="5" fill="rgba(212,175,55,0.8)">VIEW WORK</text>
+                </svg>
+              </div>
+            </div>
+            <div class="wl-actions">
+              <a href="#" class="btn-sm-gold mag-btn">View Project</a>
+              <a href="#" class="btn-sm-ghost">Live →</a>
+            </div>
           </div>
         </div>
 
@@ -702,188 +568,80 @@
     </div>
   </section>
 
-  <!-- ═══════════════════ PROCESS ═══════════════════ -->
-  <section class="process section-pad" id="process">
-    <div class="container">
-      <div class="section-label" data-reveal>How I Work</div>
-      <h2 class="section-heading centered" data-reveal>
-        My <span class="text-gold italic-text">Process</span>
-      </h2>
+  <!-- ════════════════ SKILLS ════════════════ -->
+  <section class="skills section-gap" id="skills">
+    <div class="wrap">
+      <div class="skills-grid">
 
-      <div class="process-steps">
+        <div class="skills-left rv">
+          <div class="sec-tag">Capabilities</div>
+          <h2 class="sec-heading">Skills &amp;<br/><em>Mastery</em></h2>
+          <p class="sec-sub">End-to-end execution from concept to deployed product.</p>
 
-        <div class="pstep" data-reveal>
-          <div class="ps-num">01</div>
-          <div class="ps-icon">
-            <svg viewBox="0 0 32 32" fill="none">
-              <circle cx="16" cy="16" r="15" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
-              <path d="M10 16 Q16 8 22 16" stroke="#C9A84C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-              <circle cx="16" cy="12" r="2.5" fill="#C9A84C" opacity="0.6"/>
-            </svg>
-          </div>
-          <h3 class="ps-title">Discover &amp; Define</h3>
-          <p class="ps-desc">Deep-dive into your business goals, target audience, and competitive landscape. We define what success looks like before writing a single line of code.</p>
-        </div>
-
-        <div class="pstep-line" aria-hidden="true"></div>
-
-        <div class="pstep" data-reveal>
-          <div class="ps-num">02</div>
-          <div class="ps-icon">
-            <svg viewBox="0 0 32 32" fill="none">
-              <rect x="2" y="6" width="28" height="20" rx="3" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
-              <line x1="8" y1="12" x2="20" y2="12" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round"/>
-              <line x1="8" y1="16" x2="16" y2="16" stroke="#C9A84C" stroke-width="1" stroke-linecap="round"/>
-              <line x1="8" y1="20" x2="18" y2="20" stroke="#C9A84C" stroke-width="1" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="ps-title">Design &amp; Architect</h3>
-          <p class="ps-desc">Craft the visual identity, system architecture, and user flow. Every screen is intentional — built for conversion, retention, and delight.</p>
-        </div>
-
-        <div class="pstep-line" aria-hidden="true"></div>
-
-        <div class="pstep" data-reveal>
-          <div class="ps-num">03</div>
-          <div class="ps-icon">
-            <svg viewBox="0 0 32 32" fill="none">
-              <rect x="4" y="4" width="10" height="10" rx="2" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
-              <rect x="18" y="4" width="10" height="10" rx="2" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
-              <rect x="4" y="18" width="10" height="10" rx="2" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
-              <rect x="18" y="18" width="10" height="10" rx="2" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.5"/>
-              <line x1="14" y1="9" x2="18" y2="9" stroke="#C9A84C" stroke-width="1" stroke-linecap="round"/>
-              <line x1="9" y1="14" x2="9" y2="18" stroke="#C9A84C" stroke-width="1" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="ps-title">Build &amp; Launch</h3>
-          <p class="ps-desc">Clean, scalable development — delivering a production-ready product on schedule. No shortcuts, no half-measures. Always launch-ready.</p>
-        </div>
-
-        <div class="pstep-line" aria-hidden="true"></div>
-
-        <div class="pstep" data-reveal>
-          <div class="ps-num">04</div>
-          <div class="ps-icon">
-            <svg viewBox="0 0 32 32" fill="none">
-              <polyline points="4,22 10,14 16,18 22,8 28,12" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              <circle cx="28" cy="12" r="2.5" fill="#C9A84C" opacity="0.6"/>
-            </svg>
-          </div>
-          <h3 class="ps-title">Grow &amp; Scale</h3>
-          <p class="ps-desc">Post-launch optimization, data-driven iteration, and scaling strategies. I stay invested in your growth because I think like an entrepreneur, not a contractor.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════ SKILLS ═══════════════════ -->
-  <section class="skills section-pad" id="skills">
-    <div class="container">
-      <div class="section-label" data-reveal>Capabilities</div>
-      <h2 class="section-heading" data-reveal>
-        What I <span class="text-gold italic-text">Master</span>
-      </h2>
-
-      <div class="skills-layout">
-
-        <div class="skills-bars" data-reveal>
-          <div class="skill-row">
-            <div class="sk-top">
-              <div class="sk-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="18" r="1"/></svg>
+          <div class="sk-bars">
+            <div class="sk-bar-item">
+              <div class="sk-bar-top">
+                <span>App Development</span>
+                <span class="sk-bar-pct">90%</span>
               </div>
-              <span class="sk-name">App Development</span>
-              <span class="sk-pct">90%</span>
+              <div class="sk-bar-track"><div class="sk-bar-fill sbf-gold" data-w="90"></div></div>
             </div>
-            <div class="sk-bar"><div class="sk-fill" data-w="90"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="sk-top">
-              <div class="sk-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <div class="sk-bar-item">
+              <div class="sk-bar-top">
+                <span>Web Development</span>
+                <span class="sk-bar-pct">95%</span>
               </div>
-              <span class="sk-name">Web Development</span>
-              <span class="sk-pct">95%</span>
+              <div class="sk-bar-track"><div class="sk-bar-fill sbf-gold" data-w="95"></div></div>
             </div>
-            <div class="sk-bar"><div class="sk-fill" data-w="95"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="sk-top">
-              <div class="sk-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <div class="sk-bar-item">
+              <div class="sk-bar-top">
+                <span>UI / UX Design</span>
+                <span class="sk-bar-pct">85%</span>
               </div>
-              <span class="sk-name">UI/UX Design</span>
-              <span class="sk-pct">85%</span>
+              <div class="sk-bar-track"><div class="sk-bar-fill sbf-gold" data-w="85"></div></div>
             </div>
-            <div class="sk-bar"><div class="sk-fill" data-w="85"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="sk-top">
-              <div class="sk-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            <div class="sk-bar-item">
+              <div class="sk-bar-top">
+                <span>E-commerce Systems</span>
+                <span class="sk-bar-pct">88%</span>
               </div>
-              <span class="sk-name">E-commerce Systems</span>
-              <span class="sk-pct">88%</span>
+              <div class="sk-bar-track"><div class="sk-bar-fill sbf-gold" data-w="88"></div></div>
             </div>
-            <div class="sk-bar"><div class="sk-fill" data-w="88"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="sk-top">
-              <div class="sk-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <div class="sk-bar-item">
+              <div class="sk-bar-top">
+                <span>Business Strategy</span>
+                <span class="sk-bar-pct">87%</span>
               </div>
-              <span class="sk-name">Platform Architecture</span>
-              <span class="sk-pct">82%</span>
+              <div class="sk-bar-track"><div class="sk-bar-fill sbf-gold" data-w="87"></div></div>
             </div>
-            <div class="sk-bar"><div class="sk-fill" data-w="82"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="sk-top">
-              <div class="sk-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-              </div>
-              <span class="sk-name">Business Systems</span>
-              <span class="sk-pct">87%</span>
-            </div>
-            <div class="sk-bar"><div class="sk-fill" data-w="87"></div></div>
           </div>
         </div>
 
-        <div class="skills-values" data-reveal>
-          <div class="sv-card card-glass">
-            <h3 class="sv-title">Why Work With Me?</h3>
-            <ul class="sv-list">
-              <li>
-                <span class="sv-check">✦</span>
-                <div>
-                  <strong>Founder Mindset</strong>
-                  <p>I think like an owner, not a vendor. Every project is treated as my own.</p>
-                </div>
-              </li>
-              <li>
-                <span class="sv-check">✦</span>
-                <div>
-                  <strong>End-to-End Execution</strong>
-                  <p>From wireframe to live product — I handle design, development, and delivery.</p>
-                </div>
-              </li>
-              <li>
-                <span class="sv-check">✦</span>
-                <div>
-                  <strong>Business-First Approach</strong>
-                  <p>Technology serves the business goal. I prioritize ROI over code elegance.</p>
-                </div>
-              </li>
-              <li>
-                <span class="sv-check">✦</span>
-                <div>
-                  <strong>Proven Track Record</strong>
-                  <p>30+ projects delivered. 4 companies built. Real results, not promises.</p>
-                </div>
-              </li>
+        <div class="skills-right rv">
+          <!-- Stack grid -->
+          <div class="stack-grid">
+            <div class="sk-chip"><span>React Native</span></div>
+            <div class="sk-chip"><span>Next.js</span></div>
+            <div class="sk-chip"><span>Node.js</span></div>
+            <div class="sk-chip"><span>TypeScript</span></div>
+            <div class="sk-chip"><span>Figma</span></div>
+            <div class="sk-chip"><span>Shopify</span></div>
+            <div class="sk-chip"><span>MongoDB</span></div>
+            <div class="sk-chip"><span>PostgreSQL</span></div>
+            <div class="sk-chip"><span>Firebase</span></div>
+            <div class="sk-chip"><span>AWS</span></div>
+            <div class="sk-chip"><span>Vercel</span></div>
+            <div class="sk-chip"><span>Stripe</span></div>
+          </div>
+
+          <!-- Why me card -->
+          <div class="why-card">
+            <h3>Why Choose Me?</h3>
+            <ul>
+              <li><span class="wc-check">✦</span><div><strong>Founder First</strong><p>I think like an owner — ROI over vanity.</p></div></li>
+              <li><span class="wc-check">✦</span><div><strong>Full Execution</strong><p>Design → Code → Launch. No handoffs.</p></div></li>
+              <li><span class="wc-check">✦</span><div><strong>Real Results</strong><p>4 companies. 30+ projects. Proven track record.</p></div></li>
             </ul>
-            <a href="#contact" class="btn btn-primary" style="margin-top:24px;">Start a Conversation →</a>
           </div>
         </div>
 
@@ -891,101 +649,86 @@
     </div>
   </section>
 
-  <!-- ═══════════════════ CONTACT ═══════════════════ -->
-  <section class="contact section-pad" id="contact">
-    <div class="container">
-      <div class="section-label" data-reveal>Get In Touch</div>
-      <h2 class="section-heading centered" data-reveal>
-        Let's Build Something<br/>
-        <span class="text-gold italic-text">Remarkable</span> Together
-      </h2>
-      <p class="section-desc centered" data-reveal>Open to projects, partnerships, investments, and collaborations. No idea is too big.</p>
+  <!-- ════════════════ CONTACT ════════════════ -->
+  <section class="contact section-gap" id="contact">
+    <div class="wrap">
+
+      <div class="contact-hero rv">
+        <div class="sec-tag">Let's Talk</div>
+        <h2 class="contact-heading">
+          Start a<br/>
+          <em>Conversation.</em>
+        </h2>
+        <p class="contact-sub">Projects, partnerships, investments, or just a great idea. I respond within 24 hours.</p>
+      </div>
 
       <div class="contact-layout">
 
-        <div class="contact-left" data-reveal>
-          <div class="contact-card card-glass">
-            <h3 class="cc-title">Direct Contact</h3>
-            <p class="cc-sub">Prefer a direct line? Reach me through any of these channels.</p>
-
-            <div class="contact-methods">
-              <a href="mailto:arshaonone@gmail.com" class="cm-method" id="c-email">
-                <div class="cm-ico">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                </div>
-                <div class="cm-info">
-                  <span class="cm-label">Email</span>
-                  <span class="cm-val">arshaonone@gmail.com</span>
-                </div>
-                <span class="cm-arrow">→</span>
-              </a>
-
-              <a href="tel:+8801787081119" class="cm-method" id="c-phone">
-                <div class="cm-ico">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                </div>
-                <div class="cm-info">
-                  <span class="cm-label">Phone</span>
-                  <span class="cm-val">+8801787081119</span>
-                </div>
-                <span class="cm-arrow">→</span>
-              </a>
-
-              <a href="https://wa.me/8801787081119" target="_blank" rel="noopener" class="cm-method wa-method" id="c-whatsapp">
-                <div class="cm-ico wa-ico">
-                  <svg viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                </div>
-                <div class="cm-info">
-                  <span class="cm-label">WhatsApp</span>
-                  <span class="cm-val">Click to Chat</span>
-                </div>
-                <span class="cm-arrow">→</span>
-              </a>
+        <div class="contact-methods rv">
+          <a href="mailto:arshaonone@gmail.com" class="cm-pill" id="cm-email">
+            <div class="cmp-icon">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h16v12a1 1 0 01-1 1H3a1 1 0 01-1-1V4z"/><path d="M2 4l8 7 8-7"/></svg>
             </div>
-
-            <a href="tel:+8801787081119" class="btn btn-primary btn-full" id="schedule-call" style="margin-top:28px;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Schedule a Call
-            </a>
-          </div>
+            <div class="cmp-info">
+              <span class="cmp-label">Email</span>
+              <span class="cmp-val">arshaonone@gmail.com</span>
+            </div>
+            <span class="cmp-arr">↗</span>
+          </a>
+          <a href="tel:+8801787081119" class="cm-pill" id="cm-phone">
+            <div class="cmp-icon">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3a1 1 0 011-1h2.5a1 1 0 011 1v3.5a1 1 0 01-1 1H5a14.5 14.5 0 009.5 9.5v-1.5a1 1 0 011-1H19a1 1 0 011 1V17a1 1 0 01-1 1C9.5 18 2 10.5 2 3z"/></svg>
+            </div>
+            <div class="cmp-info">
+              <span class="cmp-label">Phone</span>
+              <span class="cmp-val">+880 178 708 1119</span>
+            </div>
+            <span class="cmp-arr">↗</span>
+          </a>
+          <a href="https://wa.me/8801787081119" target="_blank" rel="noopener" class="cm-pill wa-pill" id="cm-wa">
+            <div class="cmp-icon wa-ico">
+              <svg viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </div>
+            <div class="cmp-info">
+              <span class="cmp-label">WhatsApp</span>
+              <span class="cmp-val">+880 178 708 1119</span>
+            </div>
+            <span class="cmp-arr">↗</span>
+          </a>
         </div>
 
-        <form class="contact-form card-glass" id="contact-form" data-reveal novalidate>
-          <h3 class="cf-title">Send a Message</h3>
-          <p class="cf-sub">Tell me about your project, idea, or opportunity. I read every message personally.</p>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="cf-name">Your Name</label>
-              <input type="text" id="cf-name" name="name" placeholder="John Doe" required/>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="cf-row">
+            <div class="cf-group">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Your full name" required/>
             </div>
-            <div class="form-group">
-              <label for="cf-email">Email Address</label>
-              <input type="email" id="cf-email" name="email" placeholder="john@company.com" required/>
+            <div class="cf-group">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" placeholder="your@email.com" required/>
             </div>
           </div>
-          <div class="form-group">
-            <label for="cf-budget">Budget Range (Optional)</label>
-            <select id="cf-budget" name="budget">
-              <option value="">Select budget range...</option>
-              <option>Under $500</option>
-              <option>$500 – $2,000</option>
-              <option>$2,000 – $10,000</option>
-              <option>$10,000+</option>
-              <option>Let's discuss</option>
+          <div class="cf-group">
+            <label for="cf-subject">Subject</label>
+            <select id="cf-subject" name="subject">
+              <option value="">What is this about?</option>
+              <option>New Project</option>
+              <option>Business Partnership</option>
+              <option>Investment Opportunity</option>
+              <option>Just Saying Hi</option>
             </select>
           </div>
-          <div class="form-group">
-            <label for="cf-message">Project Details</label>
-            <textarea id="cf-message" name="message" rows="5" placeholder="Describe your project, timeline, and goals..." required></textarea>
+          <div class="cf-group">
+            <label for="cf-msg">Message</label>
+            <textarea id="cf-msg" name="message" rows="4" placeholder="Tell me about your idea..." required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-full" id="form-submit">
+          <button type="submit" class="cf-submit mag-btn" id="cf-submit">
             <span>Send Message</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="10" x2="18" y2="10"/><polyline points="12 4 18 10 12 16"/></svg>
           </button>
-          <div class="form-success" id="form-success" aria-live="polite">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            Message received! I'll respond within 24 hours.
+          <div class="cf-success" id="cf-success">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="4 10 8 14 16 6"/></svg>
+            Received! I'll reply within 24 hours.
           </div>
         </form>
 
@@ -993,116 +736,52 @@
     </div>
   </section>
 
-  <!-- ═══════════════════ FOOTER ═══════════════════ -->
-  <footer class="site-footer" id="footer">
-
-    <!-- Footer top: The manifesto strip -->
+  <!-- ════════════════ FOOTER ════════════════ -->
+  <footer class="footer">
     <div class="footer-manifesto">
-      <div class="fm-inner">
-        <div class="fm-track">
-          <span>Building Digital Empires</span>
-          <span class="fm-dot">✦</span>
-          <span>One Product at a Time</span>
-          <span class="fm-dot">✦</span>
-          <span>From Bangladesh to the World</span>
-          <span class="fm-dot">✦</span>
-          <span>Building Digital Empires</span>
-          <span class="fm-dot">✦</span>
-          <span>One Product at a Time</span>
-          <span class="fm-dot">✦</span>
-          <span>From Bangladesh to the World</span>
-          <span class="fm-dot">✦</span>
-        </div>
+      <div class="fm-ticker">
+        <span>Building Digital Empires</span><span class="fm-sep">✦</span>
+        <span>From Bangladesh to the World</span><span class="fm-sep">✦</span>
+        <span>One Company at a Time</span><span class="fm-sep">✦</span>
+        <span>Building Digital Empires</span><span class="fm-sep">✦</span>
+        <span>From Bangladesh to the World</span><span class="fm-sep">✦</span>
+        <span>One Company at a Time</span><span class="fm-sep">✦</span>
       </div>
     </div>
-
-    <!-- Main footer body -->
     <div class="footer-body">
-      <div class="fb-container">
-
-        <!-- Left: Brand + manifesto -->
-        <div class="fb-brand">
-          <div class="fb-logo">
-            <svg viewBox="0 0 44 44" fill="none" class="fb-logo-svg">
-              <defs><linearGradient id="fb-g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#C9A84C"/><stop offset="100%" stop-color="#8B6914"/></linearGradient></defs>
-              <rect x="1" y="1" width="42" height="42" rx="8" stroke="url(#fb-g)" stroke-width="1.2" fill="none"/>
-              <path d="M13 34 L22 12 L31 34" stroke="url(#fb-g)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="16" y1="26" x2="28" y2="26" stroke="url(#fb-g)" stroke-width="2.5" stroke-linecap="round"/>
-            </svg>
-            <div>
-              <span class="fb-name">ARSHAON</span>
-              <span class="fb-tagline">Entrepreneur &amp; Digital Creator</span>
-            </div>
+      <div class="wrap">
+        <div class="fb-grid">
+          <div class="fb-brand">
+            <span class="fb-logo">ARSHAON</span>
+            <p>Serial entrepreneur. Company founder. Digital creator. Based in Bangladesh, building for the world.</p>
           </div>
-          <p class="fb-bio">
-            Building companies, products, and digital systems that create real-world value. Based in Bangladesh, building for the world.
-          </p>
-          <div class="fb-location">
-            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a6 6 0 00-6 6c0 4 6 10 6 10s6-6 6-10a6 6 0 00-6-6zm0 8a2 2 0 110-4 2 2 0 010 4z"/></svg>
-            Bangladesh 🇧🇩
+          <div class="fb-nav">
+            <span class="fb-nav-title">Navigate</span>
+            <a href="#bio">Profile</a>
+            <a href="#ventures">Ventures</a>
+            <a href="#work">Work</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
           </div>
-        </div>
-
-        <!-- Center: Quick links -->
-        <div class="fb-links">
-          <h4 class="fb-links-title">Navigate</h4>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#ventures">My Ventures</a></li>
-            <li><a href="#portfolio">Work</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-
-        <!-- Right: Availability card -->
-        <div class="fb-avail-card">
-          <div class="fac-inner">
-            <div class="fac-status">
-              <span class="fac-dot"></span>
-              <span>Currently Available</span>
-            </div>
-            <h4>Ready to start<br/>your next project?</h4>
-            <p>Response time: within 24 hours</p>
-            <a href="#contact" class="btn btn-primary">Get in Touch →</a>
-            <div class="fac-meta">
-              <span>📧 arshaonone@gmail.com</span>
-              <span>📱 +8801787081119</span>
+          <div class="fb-contact">
+            <span class="fb-nav-title">Contact</span>
+            <a href="mailto:arshaonone@gmail.com">arshaonone@gmail.com</a>
+            <a href="tel:+8801787081119">+880 178 708 1119</a>
+            <div class="fb-avail">
+              <span class="fb-avail-dot"></span>
+              <span>Open to new projects</span>
             </div>
           </div>
         </div>
-
-      </div>
-    </div>
-
-    <!-- Footer bottom: The strip -->
-    <div class="footer-strip">
-      <div class="fs-container">
-        <div class="fs-left">
-          <div class="fs-ventures">
-            <span class="fsv-label">Ventures:</span>
-            <span>Reels Platform</span>
-            <span>·</span>
-            <span>Commerce Hub</span>
-            <span>·</span>
-            <span>Brand Studio</span>
-            <span>·</span>
-            <span>Systems Lab</span>
-          </div>
-        </div>
-        <div class="fs-right">
-          <p>© 2026 <a href="https://arshaon.com">arshaon.com</a> · Built by Ashikur Rahman Shaon</p>
+        <div class="fb-bottom">
+          <span>© 2026 Ashikur Rahman Shaon · <a href="https://arshaon.com">arshaon.com</a></span>
+          <span>Built with precision. 🇧🇩</span>
         </div>
       </div>
     </div>
-
   </footer>
 
-  <!-- Back to top -->
-  <button class="back-top" id="back-top" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
-  </button>
+  <button class="back-top" id="back-top" aria-label="Back to top">↑</button>
 
   <script src="main.js"></script>
 </body>
