@@ -35,6 +35,31 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  z-index: 0;
+  overflow-x: hidden;
+}
+
+/* Ambient Glow for iOS Glass Effect */
+body::before {
+  content: '';
+  position: absolute;
+  top: -15%; left: -5%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+}
+body::after {
+  content: '';
+  position: absolute;
+  bottom: 10%; right: -10%;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(60,130,246,0.05) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
 }
 
 ::-webkit-scrollbar { width: 0; height: 0; display: none; }
@@ -55,6 +80,8 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(180px, auto);
   gap: 16px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Utilities */
@@ -63,19 +90,28 @@ body {
 .mono { font-family: var(--font-mono); font-size: 0.85em; }
 .emphasis { color: var(--accent); font-weight: 500; }
 
-/* ── WIDGETS ── */
+/* ── WIDGETS (iOS Glass) ── */
 .widget {
-  background: var(--bg-widget);
-  border: 1px solid var(--border);
+  background: rgba(18, 18, 18, 0.45);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   border-radius: var(--radius);
   padding: 24px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   overflow: hidden;
   position: relative;
 }
+.widget::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit;
+  padding: 1px; background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+}
 .widget:hover {
-  background: var(--bg-widget-hover);
-  border-color: var(--border-hover);
+  background: rgba(26, 26, 26, 0.55);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
 }
 .widget-header {
   display: flex;
@@ -133,15 +169,16 @@ body {
   border-radius: 50%;
 }
 .user-info h1 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 4px;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 .user-info .role {
   color: var(--accent);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 .user-info .location {
   display: flex;
@@ -158,20 +195,31 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-sm);
+  gap: 8px;
+  border-radius: 12px;
   font-weight: 600;
   font-size: 0.9rem;
   text-decoration: none;
   cursor: pointer;
   transition: 0.2s;
-}
-.btn-primary {
-  background: var(--text-primary);
-  color: var(--bg-app);
+  height: 44px;
   padding: 0 20px;
-  height: 40px;
 }
-.btn-primary:hover { background: var(--accent); color: var(--bg-app); }
+.btn-whatsapp {
+  background: #25D366;
+  color: #050505;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+.btn-whatsapp:hover { background: #1ebe59; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); }
+
+.btn-primary {
+  background: rgba(255,255,255,0.1);
+  color: var(--text-primary);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+}
+.btn-primary:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
+
 .btn-icon {
   background: rgba(255,255,255,0.05);
   color: var(--text-primary);
