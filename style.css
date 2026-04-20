@@ -215,7 +215,7 @@ body {
 
 /* ── VISUALIZER ── */
 .vis-container {
-  height: 150px;
+  height: 260px;
   width: 100%;
   position: relative;
   display: flex;
@@ -479,7 +479,7 @@ body {
 
   /* Glorious Mobile Adjustments */
   .vis-flex { flex-direction: column; gap: 28px; }
-  .vis-container { width: 100%; max-width: 240px; height: 210px; margin: 0 auto; }
+  .vis-container { width: 100%; max-width: 300px; height: 260px; margin: 0 auto; }
   
   .ventures-widget { padding: 24px 20px; }
   .ventures-scroll { 
