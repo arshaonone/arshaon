@@ -40,26 +40,28 @@ body {
   overflow-x: hidden;
 }
 
-/* Ambient Glow for iOS Glass Effect */
-body::before {
-  content: '';
-  position: absolute;
-  top: -15%; left: -5%;
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 70%);
-  filter: blur(60px);
-  z-index: -1;
-  pointer-events: none;
-}
-body::after {
-  content: '';
-  position: absolute;
-  bottom: 10%; right: -10%;
-  width: 800px; height: 800px;
-  background: radial-gradient(circle, rgba(60,130,246,0.05) 0%, transparent 70%);
-  filter: blur(60px);
-  z-index: -1;
-  pointer-events: none;
+/* Ambient Glow for iOS Glass Effect (Desktop Only to save Mobile GPU) */
+@media (min-width: 651px) {
+  body::before {
+    content: '';
+    position: absolute;
+    top: -15%; left: -5%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 70%);
+    filter: blur(60px);
+    z-index: -1;
+    pointer-events: none;
+  }
+  body::after {
+    content: '';
+    position: absolute;
+    bottom: 10%; right: -10%;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(60,130,246,0.05) 0%, transparent 70%);
+    filter: blur(60px);
+    z-index: -1;
+    pointer-events: none;
+  }
 }
 
 ::-webkit-scrollbar { width: 0; height: 0; display: none; }
@@ -499,7 +501,14 @@ body::after {
   body { background: #000; overflow-x: hidden; }
   .app-container { padding: 8px; gap: 10px; margin-bottom: 0; }
   .bento-grid { gap: 10px; }
-  .widget { padding: 20px; border-radius: 28px; background: #0a0a0a; border: 1px solid rgba(255,255,255,0.06); }
+  .widget { 
+    padding: 20px; 
+    border-radius: 28px; 
+    background: rgba(18, 18, 18, 0.55); 
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.08); 
+  }
   
   .app-header { flex-direction: column; align-items: stretch; gap: 20px; padding: 24px 20px; border-radius: 28px; }
   .user-profile { flex-direction: column; align-items: center; text-align: center; }
