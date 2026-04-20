@@ -329,6 +329,58 @@ body {
 .status-badge.success { background: rgba(16,185,129,0.1); color: var(--green); }
 .status-badge.pending { background: rgba(212,175,55,0.1); color: var(--accent); }
 
+/* ── SOCIALS ── */
+.social-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: 0.2s;
+}
+.social-btn:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+.social-btn svg {
+  color: var(--text-secondary);
+  transition: 0.2s;
+}
+.social-btn:hover svg {
+  color: var(--accent);
+}
+
+/* ── FOOTER ── */
+.footer-widget {
+  text-align: center;
+  padding: 32px 0;
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  border: none;
+  background: transparent;
+}
+.footer-widget:hover {
+  background: transparent;
+  border-color: transparent;
+}
+.footer-widget .emphasis {
+  color: var(--text-secondary);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .bento-grid { grid-template-columns: 1fr 1fr; }
@@ -336,12 +388,20 @@ body {
 }
 
 @media (max-width: 650px) {
-  body { padding: 12px; }
-  .app-header { flex-direction: column; align-items: flex-start; gap: 20px; padding: 20px; }
-  .header-actions { width: 100%; }
+  body { padding: 8px; background: #000; }
+  .app-container { gap: 8px; }
+  .bento-grid { gap: 8px; }
+  .widget { padding: 16px; border-radius: 20px; }
+  
+  .app-header { flex-direction: column; align-items: stretch; gap: 20px; padding: 20px; border-radius: 20px; }
+  .user-profile { flex-direction: column; align-items: center; text-align: center; }
+  .user-info .location { justify-content: center; }
+  .header-actions { flex-direction: row; }
   .btn-primary { flex: 1; }
+  
   .bento-grid { grid-template-columns: 1fr; }
   .span-2, .span-3 { grid-column: span 1; }
+  
   .stats-col { flex-direction: row; flex-wrap: wrap; }
   .stat-card {
     min-width: calc(50% - 8px);
@@ -350,4 +410,7 @@ body {
     gap: 8px;
     padding: 16px;
   }
+  
+  .social-grid { grid-template-columns: 1fr; }
+  .footer-widget { padding: 16px; }
 }
